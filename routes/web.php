@@ -1,5 +1,8 @@
 <?php
 
+// -> All User
+use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleAdminController;
 use App\Http\Controllers\RoleUserController;
@@ -114,6 +117,7 @@ Route::get('/admin/datagejala', [DataGejalaController::class, 'index']);
 
 // -> Untuk Data Gejala Covid
 Route::get('/admin/dataisolasi', [DataIsolasiController::class, 'index']);
+Route::get('/admin/dataisolasiterpusat', [DataIsolasiController::class, 'isomanTerpusat'])->name('isomanTerpusat');
 
 
 
@@ -127,3 +131,10 @@ Route::get('/datapersonalcovid/{id}', [DataPersonalController::class, 'showCovid
 Route::get('/datapersonalvaksin/{id}', [DataPersonalController::class, 'showVaksin'])->name('showVaksin');
 Route::get('/datapersonalgejala/{id}', [DataPersonalController::class, 'showGejala'])->name('showGejala');
 Route::get('/datapersonalisolasi/{id}', [DataPersonalController::class, 'showIsolasi'])->name('showIsolasi');
+
+// +---------------------------------------------------------------------------------------+ //
+//                                   <<< All Role Routes >>>
+// +---------------------------------------------------------------------------------------+ //
+
+// -> Untuk Profile
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');

@@ -4,9 +4,15 @@
 {{ $complete->nama_lengkap }}
 @endsection
 
-@section('status')
-{{ $user->role }}
-@endsection
+@if(($complete->status ?? '') != 'biasa' && ($complete->verified ?? '') == 'yes')
+    @section('status')
+        {{ $complete->status }} &nbsp;&&nbsp; {{ $user->role }}
+    @endsection
+@else 
+    @section('status')
+        {{ $user->role }}
+    @endsection
+@endif
 
 @section('content')
             <!--breadcrumb-->				

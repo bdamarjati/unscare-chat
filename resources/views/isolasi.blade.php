@@ -4,9 +4,15 @@
 {{ $complete->nama_lengkap }}
 @endsection
 
-@section('status')
-{{ $user->role }}
-@endsection
+@if(($complete->status ?? '') != 'biasa' && ($complete->verified ?? '') == 'yes')
+    @section('status')
+        {{ $complete->status }} &nbsp;&&nbsp; {{ $user->role }}
+    @endsection
+@else 
+    @section('status')
+        {{ $user->role }}
+    @endsection
+@endif
 
 @section('content')
 <!--breadcrumb-->	
@@ -95,13 +101,13 @@
                     <label class="form-label">Alasan lain :</label>
                     <textarea type="form-control" class="form-control" placeholder="kasih tanda - (bila tidak ada alasan lain)" name="alasan_lain" id="keterangan" required></textarea>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label class="form-label">Butuh Kiriman Bantuan :</label>
                     <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="butuh_bantuan" id="option" value="" required>                                        
                         <option value="ya">ya </option>
                         <option value="tidak">tidak </option>
                     </select>
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label class="form-label">Alamat lengkap Kos/Asrama/Rumah sewa, disekitar UNS <br>(contoh, kos xx, jalan xx, gang xx, RT/RW, kelurahan, kecamatan, Surakarta) :</label>
                     <textarea type="form-control" class="form-control" placeholder="" name="alamat" id="alamat" required></textarea>

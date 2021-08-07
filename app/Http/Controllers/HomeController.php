@@ -35,7 +35,21 @@ class HomeController extends Controller
 
         $user = Auth::user();
         $complete = UserData::where('id_user',$user->id)->get()->first();
+        
+        if($complete->status == 'dokter' && $complete->verified == 'yes'){
+
+        }
         return view('home', compact('complete','user'));
+    }
+    public function profile()
+    {
+        $Role = Auth::user()->role;
+        $Check = UserData::where('id_user',Auth::user()->id)->first();
+
+        $user = Auth::user();
+        $complete = UserData::where('id_user',$user->id)->get()->first();
+        
+        return view('profile', compact('complete','user'));
     }
 
     /**

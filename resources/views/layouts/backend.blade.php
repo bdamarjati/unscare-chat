@@ -59,7 +59,9 @@
                             <div class="menu-title">Dashboard</div>
                         </a>
                         <ul>
-                            <li> <a href="{{url('/home')}}"><i class="bx bx-right-arrow-alt"></i>Profile</a>
+                            <li> <a href="{{url('/home')}}"><i class="bx bx-right-arrow-alt"></i>Dashboard</a>
+                            </li>
+                            <li> <a href="{{url('/profile')}}"><i class="bx bx-right-arrow-alt"></i>Profile</a>
                             </li>
                         </ul>
                     </li>
@@ -105,6 +107,8 @@
                             <div class="menu-title">Data Covid 19</div>
                         </a>
                         <ul>
+                            <li> <a href="{{url('/admin/dataoverall')}}"><i class="bx bx-right-arrow-alt"></i>Data Covid Overall</a>
+                            </li>
                             <li> <a href="{{url('/admin/datapositifcovid')}}"><i class="bx bx-right-arrow-alt"></i>Data User Positif Covid</a>
                             </li>
                             <li> <a href="{{url('/admin/datavaksin')}}"><i class="bx bx-right-arrow-alt"></i>Data Vaksinasi</a>
@@ -133,6 +137,8 @@
                             </li>
                             <li> <a href="{{url('/admin/dataisolasi')}}"><i class="bx bx-right-arrow-alt"></i>Data User Isolasi Mandiri</a>
                             </li>
+                            <li> <a href="{{url('/admin/dataisolasiterpusat')}}"><i class="bx bx-right-arrow-alt"></i>Data User Isolasi Terpusat</a>
+                            </li>
                         </ul>
                     </li>
                     @endif
@@ -140,7 +146,7 @@
                         <a href="/{{ config('chatify.routes.prefix') }}" class="has-arrow">
                             <div class="parent-icon"><i class='bx bx-chat' ></i>
                             </div>
-                            <div class="menu-title">Fitur Chat</div>
+                            <div class="menu-title">Fitur Konsultasi</div>
                         </a>
                     </li>
                 </ul>

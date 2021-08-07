@@ -37,6 +37,16 @@ class DataIsolasiController extends Controller
         return view('dataisolasi',compact('user','complete','data'));
     }
 
+    public function isomanTerpusat()
+    {
+        $user = Auth::user();
+        $complete = UserData::where('id_user',$user->id)->get()->first();
+        $data = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->get();
+
+        // return $data;
+        return view('dataisolasi',compact('user','complete','data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
