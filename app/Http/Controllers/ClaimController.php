@@ -8,6 +8,7 @@ use App\Models\UserData;
 
 // untuk Data Covid
 use App\Models\ClaimCovid;
+use App\Models\ClaimCovidHistory;
 use App\Models\ClaimVaksin;
 use App\Models\ClaimGejala;
 use App\Models\ClaimIsolasi;
@@ -35,8 +36,10 @@ class ClaimController extends Controller
         $complete = UserData::where('id_user',$user->id)->get()->first();
         $data = ClaimCovid::where('id_user',$user->id)->get()->last();
         $vaksin = ClaimVaksin::where('id_user',$user->id)->get()->last();
+        
+        $history = ClaimCovid::where('id_user',$user->id)->get()->all();
 
-        return view('claim',compact('user','complete','data','vaksin'));
+        return view('claim',compact('user','complete','data','vaksin','history'));
     }
 
     /**
@@ -72,9 +75,18 @@ class ClaimController extends Controller
             'gambar_hasiltest' => $nama_gambar, 
             'keterangan'       => $request->keterangan,
             'sembuh'           => 'belum'
-       ]);
+        ]);
 
-       return redirect('user/claimcovid')->with('message','Anda saat ini terinfeksi Covid-19, Segera lakukan isolasi mandiri atau Hubungi pihak yang berwenang !');
+        $check = ClaimCovid::where('id_user',$user->id)->get()->first();
+        if($check == null){
+            ClaimCovidHistory::create( 
+                ['id_user'         => $complete->id_user,
+                'sembuh'           => 'belum'
+            ]);
+            return redirect('user/claimcovid')->with('message','Anda saat ini terinfeksi Covid-19, Segera lakukan isolasi mandiri atau Hubungi pihak yang berwenang !');
+        }else{
+            return redirect('user/claimcovid')->with('message','Anda saat ini terinfeksi Covid-19, Segera lakukan isolasi mandiri atau Hubungi pihak yang berwenang !');
+        }
     }
 
     /**
@@ -108,6 +120,7 @@ class ClaimController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request;
         // return $id;
         $user = Auth::user();
         $complete = ClaimCovid::where('id_user',$user->id)->get()->first();
@@ -118,6 +131,13 @@ class ClaimController extends Controller
                         'sembuh'=>'sudah'
                     ]
                 );
+
+        ClaimCovidHistory::where('id_user',$user->id)->update(
+                [
+                        'sembuh'=>'sudah'
+                    ]
+                );
+                
         return redirect('user/claimcovid');
     }
 

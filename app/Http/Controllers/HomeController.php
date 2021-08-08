@@ -117,4 +117,8 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function chart(){
+        return view('chart');
+    }
 }

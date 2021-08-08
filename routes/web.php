@@ -89,6 +89,7 @@ Route::patch('/user/gejalacovid/{id}', [GejalaController::class, 'update'])->nam
 
 // -> Untuk Claim Vaksin
 Route::get('/user/claimvaksin', [ClaimVaksinController::class, 'index']);
+Route::post('/user/claimvaksin', [ClaimVaksinController::class, 'store'])->name('store');
 Route::patch('/user/claimvaksin/{id}', [ClaimVaksinController::class, 'update'])->name('update');
 
 // -> Untuk Isolasi Mandiri
@@ -138,3 +139,6 @@ Route::get('/datapersonalisolasi/{id}', [DataPersonalController::class, 'showIso
 
 // -> Untuk Profile
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+
+// Emergency / Experiment Routes
+Route::get('/chart', [HomeController::class, 'chart'])->name('chart');

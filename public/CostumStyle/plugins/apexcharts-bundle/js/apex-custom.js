@@ -163,7 +163,7 @@ $(function () {
 		},
 		colors: ["#0d6efd", '#f41127'],
 		title: {
-			text: 'Area Chart',
+			text: '',
 			align: 'left',
 			style: {
 				fontSize: "16px",
@@ -171,7 +171,7 @@ $(function () {
 			}
 		},
 		dataLabels: {
-			enabled: false
+			enabled: true
 		},
 		stroke: {
 			curve: 'smooth'

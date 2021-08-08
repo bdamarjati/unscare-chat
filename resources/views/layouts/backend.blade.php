@@ -36,6 +36,7 @@
 
             <!--sidebar wrapper (Bagian SideBar)-->
             <div class="sidebar-wrapper" data-simplebar="true">
+
                 <!-- Sidebar Header -->
                 <div class="sidebar-header">
                     <div>
@@ -43,7 +44,7 @@
                     </div>
                     <div>
                         <br>
-                            <h4 class="logo-text">UNS CARE</h4>
+                            <a href="/home"><h4 class="logo-text">UNS CARE</h4></a>
                         <br>
                     </div>
                     <div class="toggle-icon ms-auto"><i class='bx bx-chevron-left-circle font-35'></i>
@@ -56,7 +57,7 @@
                         <a href="javascript:;" class="has-arrow">
                             <div class="parent-icon"><i class='bx bx-home-circle'></i>
                             </div>
-                            <div class="menu-title">Dashboard</div>
+                            <div class="menu-title">Home</div>
                         </a>
                         <ul>
                             <li> <a href="{{url('/home')}}"><i class="bx bx-right-arrow-alt"></i>Dashboard</a>
@@ -229,9 +230,9 @@
             <!--end overlay-->
             <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
             <!--End Back To Top Button-->
-            <footer class="page-footer">
-            <p class="mb-0">Copyright © 2021 <a href="">. Dr. Paradise</a></p>
-            </footer>
+            <!-- <footer class="page-footer">
+                <p class="mb-0 ">Copyright © 2021 <a href="#" class="font-italic"> Dr. Paradise</a></p>
+            </footer> -->
         </div>
         <!--end wrapper-->
 
@@ -333,7 +334,7 @@
         <!--end switcher-->
 
         <!-- Additional Css -->
-        <script src="{{asset('CostumStyle/script.js')}}"></script>
+        <!-- <script src="{{asset('CostumStyle/script.js')}}"></script> -->
         <!-- Bootstrap JS -->
         <script src="{{asset('CostumStyle/js/bootstrap.bundle.min.js')}}"></script>
         <!--plugins-->
@@ -346,6 +347,12 @@
         <script src="{{asset('CostumStyle/js/table-datatable.js')}}"></script>
         <!--app JS-->
         <script src="{{asset('CostumStyle/js/app.js')}}"></script>
+
+        <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
+        <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apex-custom.js')}}"></script>
+        <!-- <script src="{{asset('CostumStyle/js/index.js')}}"></script> -->
+
+       
     </body>
 
 </html>

@@ -1,3 +1,5 @@
+<!-- Halaman Ini Sudah Sesuai Tata Penulisan -->
+
 @extends('layouts.backend')
 
 @section('data')
@@ -65,6 +67,12 @@
     </div>
 @endif
 
+@if(session()->get('warning'))
+    <div class="alert alert-danger alert-dismissable mt-20" role="alert">
+        <h4>{{ session()->get('warning') }}  </h4> 
+    </div>
+@endif
+
 <h6 class="mb-0 text-uppercase">DataTable Example</h6>
 <hr/>
 <!--end breadcrumb-->
@@ -80,8 +88,8 @@
                 <div class="login-separater text-center mb-4"> 
                     <hr/>
                 </div>
-                <form method="post" action="/user/claimvaksin/{{$user->id}}" enctype="multipart/form-data" >
-                @method('PATCH')
+                <!-- <form method="post" action="/user/claimvaksin/{{$user->id}}" enctype="multipart/form-data" > -->
+                <form method="post" action="/user/claimvaksin" enctype="multipart/form-data" >
                 @csrf
                     <div class="mb-3">
                         <label class="form-label">Dosis ke :</label>

@@ -1,3 +1,5 @@
+<!-- Halaman Ini Sudah Sesuai Tata Penulisan -->
+
 @extends('layouts.backend')
 
 @section('data')
@@ -15,6 +17,7 @@
 @endif
 
 @section('content')
+    <!--Container-->
     <div class="container">
         
         <!--breadcrumb-->				
@@ -49,13 +52,15 @@
         <div class="ms-auto">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Settings</button>
-                <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
+                <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                    <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"><a class="dropdown-item" href="javascript:;">Action</a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                    <a class="dropdown-item" href="javascript:;">Action</a>
                     <a class="dropdown-item" href="javascript:;">Another action</a>
                     <a class="dropdown-item" href="javascript:;">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:;">Separated link</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:;">Separated link</a>
                 </div>
             </div>
         </div>
@@ -69,8 +74,11 @@
         </div>
     @endif
 
-    <p class="mb-0 text-uppercase display-6 text-center">wellcome to uns care</p>
+    <!-- Page Break -->
     <hr/>
+    <p class="mb-0 text-uppercase display-5 text-center">wellcome to uns care</p>
+    <hr/>
+    <!-- end of Page Break -->
 
     <!-- Shortcut -->
     <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
@@ -81,12 +89,12 @@
                         <div>
                             <p class="mb-0 text-secondary">Lapor</p>
                             <h4 class="my-1">Isolasi Mandiri</h4>
-                            <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i></p>
+                            <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
                         <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bx-block' ></i>
                         </div>
                     </div>
-                    <div id="chart1"></div>
+                    <!-- <div id="chart1"></div> -->
                 </div>
             </div>
         </a>
@@ -97,12 +105,12 @@
                         <div>
                             <p class="mb-0 text-secondary">Lapor</p>
                             <h4 class="my-1">Sudah Vaksin</h4>
-                            <p class="mb-0 font-13 text-warning"><i class='bx bxs-up-arrow align-middle'></i></p>
+                            <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
                         <div class="widgets-icons bg-light-warning text-warning ms-auto"><i class='bx bx-capsule'></i>
                         </div>
                     </div>
-                    <div id="chart2"></div>
+                    <!-- <div id="chart2"></div> -->
                 </div>
             </div>
         </a>
@@ -113,12 +121,12 @@
                         <div>
                             <p class="mb-0 text-secondary">Lapor</p>
                             <h4 class="my-1">Positif Covid</h4>
-                            <p class="mb-0 font-13 text-danger"><i class='bx bxs-up-arrow align-middle'></i></p>
+                            <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
                         <div class="widgets-icons bg-light-danger text-danger ms-auto"><i class='bx bxs-virus'></i>
                         </div>
                     </div>
-                    <div id="chart3"></div>
+                    <!-- <div id="chart3"></div> -->
                 </div>
             </div>
         </a>
@@ -131,12 +139,12 @@
                         <div>
                             <p class="mb-0 text-secondary">Lapor</p>
                             <h4 class="my-1">Isolasi Terpusat</h4>
-                            <p class="mb-0 font-13 text-primary"><i class='bx bxs-up-arrow align-middle'></i></p>
+                            <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
                         <div class="widgets-icons bg-light-primary text-primary ms-auto"><i class='bx bxs-group' ></i>
                         </div>
                     </div>
-                    <div id="chart1"></div>
+                    <!-- <div id="chart1"></div> -->
                 </div>
             </div>
         </a>
@@ -147,12 +155,12 @@
                         <div>
                             <p class="mb-0 text-secondary">Layanan</p>
                             <h4 class="my-1">Konsultasi</h4>
-                            <p class="mb-0 font-13 text-secondary"><i class='bx bxs-up-arrow align-middle'></i></p>
+                            <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
                         <div class="widgets-icons bg-light-secondary text-secondary ms-auto"><i class='bx bxs-chat'></i>
                         </div>
                     </div>
-                    <div id="chart2"></div>
+                    <!-- <div id="chart2"></div> -->
                 </div>
             </div>
         </a>
@@ -162,17 +170,16 @@
                     <div class="d-flex align-items-center">
                         <div>
                             <p class="mb-0 text-secondary">Layanan</p>
-                            <h4 class="my-1">Bantuan</h4>
-                            <p class="mb-0 font-13 text-info"><i class='bx bxs-up-arrow align-middle'></i></p>
+                            <h4 class="my-1">Bantuan Isolasi</h4>
+                            <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
                         <div class="widgets-icons bg-light-info text-info ms-auto"><i class='bx bx-dollar'></i>
                         </div>
                     </div>
-                    <div id="chart3"></div>
+                    <!-- <div id="chart3"></div> -->
                 </div>
             </div>
         </a>
     </div>
     <!-- end Shortcut -->
-
 @endsection

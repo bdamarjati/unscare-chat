@@ -73,6 +73,52 @@
     <div class="col d-flex">
         <div class="card radius-10 w-100">
             <div class="card-body">
+                <div class="text-center">
+                    <i class="bx bx-notepad text-dark font-50"></i>
+                        <h4 class="form-label ">History Positif Covid</h4>
+                </div>
+                <div class="login-separater text-center mb-4"> 
+                    <hr/>
+                </div>
+                <!-- <form method="post" action="/user/claimvaksin/{{$user->id}}" enctype="multipart/form-data" > -->
+                <div class="table-responsive">
+                    <table id="example2" class="table table-striped table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Lengkap</th>
+                                <th>File Hasil Test</th>
+                                <th>Keterangan</th>
+                                <th>Sudah Sembuh ?</th>
+                                <th>Tanggal Lapor</th>
+                                <th>Action</th>
+                                <!-- <th>Updated at</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+					<?php $no=1; ?>
+					@foreach ($data as $row)  
+						<tr>
+							<td>1</td>
+							<td>asd</td>
+							<td>asd</td>
+							<td>asd</td>
+							<td>asd</td>
+							<td>asd</td>					
+							<td>
+							asd
+							</td>					
+						</tr>
+					@endforeach
+					</tbody>
+				</table>
+			</div>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex">
+        <div class="card radius-10 w-100">
+            <div class="card-body">
 
                 @if(($data ?? '') == null)
                 <div class="text-center"><i class="bx bx-disc text-dark font-50"></i><h4 class="form-label ">Claim Positif Covid - 19</h4>
@@ -91,23 +137,12 @@
 
             <form method="post" action="/user/claimcovid" enctype="multipart/form-data" >
             @csrf
-                <div class="mb-3">
-                    <label class="form-label">Keterangan :</label>
-                    <textarea type="form-control" class="form-control" placeholder="" name="keterangan" id="keterangan" required></textarea>
-                </div>
-
-                @if(($data->sembuh ?? '') == 'belum')
-                <div class="mb-3">
-                    <label class="form-label">Surat Keterangan Sehat :</label>
-                    <input type="file" class="form-control" id="file_hasil" name="file_hasil" data-toggle="custom-file-input" required multiple>
-                </div>
-                <div class="mb-3">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-label" for="flexCheckChecked"> Saya menkonfirmasi bahwa saya sudah sembuh</label>
-                </div>
-                @endif
 
                 @if(($data->sembuh ?? '') == null)
+                <div class="mb-3">
+                    <label class="form-label">Keterangan :</label>
+                    <textarea type="form-control" class="form-control" placeholder="" name="lokasi" id="" required></textarea>
+                </div>
                 <div class="mb-3">
                     <label class="form-label">Hasil Test Positif Covid <span>(SWAB Antigen)</span> :</label>
                     <input type="file" class="form-control" id="file_hasil" name="file_hasil" data-toggle="custom-file-input" required multiple>
@@ -127,6 +162,10 @@
                 @endif
                 
                 @if(($data->sembuh ?? '') == 'sudah')
+                <div class="mb-3">
+                    <label class="form-label">Keterangan :</label>
+                    <textarea type="form-control" class="form-control" placeholder="" name="lokasi" id="" required></textarea>
+                </div>
                 <div class="mb-3">
                     <label class="form-label">Hasil Test Positif Covid <span>(SWAB Antigen)</span> :</label>
                     <input type="file" class="form-control" id="file_hasil" name="file_hasil" data-toggle="custom-file-input" required multiple>
@@ -167,6 +206,18 @@
             @method('PATCH')
             @csrf
                 @if(($data->sembuh ?? '') == 'belum')
+                <div class="mb-3">
+                    <label class="form-label">Keterangan :</label>
+                    <textarea type="form-control" class="form-control" placeholder="" name="keterangan" id="" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Surat Keterangan Sehat :</label>
+                    <input type="file" class="form-control" id="file_hasil" name="file_hasil" data-toggle="custom-file-input" required multiple>
+                </div>
+                <div class="mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-label" for="flexCheckChecked"> Saya menkonfirmasi bahwa saya sudah sembuh</label>
+                </div>
                 <div class="col-12">
                     <div class="d-grid">
                         <button type="submit" class="btn btn-success btn-lg px-5"><i class="bx bx-sun"></i>Saya Sudah Sembuh !</button>
@@ -177,5 +228,6 @@
             </form>
         </div>
     </div>
+    
 </div>
 @endsection

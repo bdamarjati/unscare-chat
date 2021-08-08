@@ -69,8 +69,11 @@
     </div>
 @endif
 
-<p class="mb-0 text-uppercase display-6 text-center">MY PROFILE</p>
-<hr/>
+    <!-- Page Break -->
+    <hr/>
+    <p class="mb-0 text-uppercase display-5 text-center">My Profile</p>
+    <hr/>
+    <!-- end of Page Break -->
 
 <!-- Main Body -->
 <div class="main-body">
