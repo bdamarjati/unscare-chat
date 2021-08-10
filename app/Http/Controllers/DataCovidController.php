@@ -113,4 +113,6 @@ class DataCovidController extends Controller
     {
         //
     }
+
+    
 }

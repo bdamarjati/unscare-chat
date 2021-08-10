@@ -12,6 +12,8 @@
         <link href="{{asset('CostumStyle/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
         <link href="{{asset('CostumStyle/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
         <link href="{{asset('CostumStyle/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+        <link href="{{asset('CostumStyle/plugins/datatable/css/dataTables.dateTime.min.css')}}" rel="stylesheet" />
+        <link href="{{asset('CostumStyle/plugins/datatable/css/jquery.dataTables.min.css')}}" rel="stylesheet" />
         <!-- loader-->
         <link href="{{asset('CostumStyle/css/pace.min.css')}}" rel="stylesheet" />
         <script src="{{asset('CostumStyle/js/pace.min.js')}}"></script>
@@ -344,13 +346,17 @@
         <script src="{{asset('CostumStyle/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
         <script src="{{asset('CostumStyle/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
         <script src="{{asset('CostumStyle/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+        <script src="{{asset('CostumStyle/plugins/datatable/js/dataTables.dateTime.min.js')}}"></script>
+        <script src="{{asset('CostumStyle/plugins/datatable/js/moment.min.js')}}"></script>
         <script src="{{asset('CostumStyle/js/table-datatable.js')}}"></script>
         <!--app JS-->
         <script src="{{asset('CostumStyle/js/app.js')}}"></script>
 
         <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
         <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apex-custom.js')}}"></script>
+        @yield('CustomScripts')
         <!-- <script src="{{asset('CostumStyle/js/index.js')}}"></script> -->
+        
 
        
     </body>
