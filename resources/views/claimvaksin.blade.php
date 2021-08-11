@@ -46,6 +46,8 @@
     @if(($vaksin ?? '') == null)
     <div class="btn btn-warning "> Belum Vaksin Covid !  </div>
     @endif
+
+    &nbsp;&nbsp;
     
     <div class="ms-auto">
         <div class="btn-group">
@@ -79,11 +81,61 @@
 
 <div class="row row-cols-1 row-cols-xl-2">
     <div class="col d-flex">
+        
+        <div class="card radius-10 w-100">
+            <div class="card-body">
+                <div class="text-center">
+                    <i class="bx bx-notepad text-dark font-50"></i>
+                    <h4 class="form-label ">History Vaksin Covid Saya</h4>
+                </div>
+                <div class="login-separater text-center mb-4">
+                    <hr />
+                </div>
+                @if($vaksin ?? '' != null)
+                <!-- <form method="post" action="/user/claimvaksin/{{$user->id}}" enctype="multipart/form-data" > -->
+                <div class="table-responsive">
+                    <table id="example2" class="table table-striped table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <!-- <th>Nama Lengkap</th> -->
+                                <th>dosis ke</th>
+                                <th>lokasi</th>
+                                <th>Tanggal Lapor</th>
+                                <!-- <th>Action</th> -->
+                                <!-- <th>Updated at</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $no=1; ?>
+                            @foreach ($history as $row)
+                            
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{$row->dosis_ke}}</td>
+                                <td>{{$row->keterangan}}</td>
+                                <td>{{$row->created_at}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                @elseif($vaksin ?? '' == null)
+                <div class="text-center">
+                    <!-- <i class="bx bx-notepad text-dark font-50"></i> -->
+                    <span class="falign-middle">Maaf, anda belum pernah melaporkan sudah vaksin</span>
+                </div>
+                @endif
+            </div>
+        </div>
+        
+    </div>
+    <div class="col d-flex">
         <div class="card radius-10 w-100">
             <div class="card-body">
                 <div class="text-center">
                     <i class="bx bx-capsule text-dark font-50"></i>
-                        <h4 class="form-label ">Claim Vaksin Covid</h4>
+                        <h4 class="form-label ">Lapor Vaksin Covid</h4>
                 </div>
                 <div class="login-separater text-center mb-4"> 
                     <hr/>

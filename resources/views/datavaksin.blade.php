@@ -48,11 +48,25 @@
 	</div>
 	<!--end breadcrumb-->
 
+	<!-- Donnut Chart -->
+	
+	<!-- end of Donnut Chart -->
+
 	<!-- Page Break -->
 	<hr/>
 	<p class="mb-0 text-uppercase display-6 text-center">Data user yang sudah vaksin covid-19</p>
 	<hr/>
 	<!-- end of Page Break -->
+
+	<!-- Stat -->
+<div class="card">
+    <div class="card-body">
+        <div class="container">
+            <div id="chart9"></div>
+        </div>
+    </div>
+</div>
+<!-- end of Stat -->
 
 	<!-- Main Table -->
 	<div class="card">
@@ -92,4 +106,8 @@
 		</div>
 	</div>
 	<!-- end of Main Table -->
+@endsection
+
+@section('CustomScripts')
+<script src="{{asset('js/datavaksin.js')}}"></script>
 @endsection

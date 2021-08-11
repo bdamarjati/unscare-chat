@@ -33,7 +33,11 @@ class ClaimVaksinController extends Controller
         $data = ClaimCovid::where('id_user',$user->id)->get()->last();
         $vaksin = ClaimVaksin::where('id_user',$user->id)->get()->last();
 
-        return view('claimvaksin',compact('user','complete','data','vaksin'));
+        // return $vaksin;
+
+        $history = ClaimVaksin::where('id_user',$user->id)->get();
+
+        return view('claimvaksin',compact('history','user','complete','data','vaksin'));
     }
 
     /**

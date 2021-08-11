@@ -5,15 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClaimCovid extends Model
+class ClaimIsolasiRSLainnya extends Model
 {
     use HasFactory;
 
-    protected $table = 'claim_covid';
+    protected $table = 'claim_isolasi_rslainnya';
 
     protected $guarded = [];
-
-    public function scopeMhsaktif($query,$id){
-        return $query->where('id_user',$id)->get();
-    }
 }

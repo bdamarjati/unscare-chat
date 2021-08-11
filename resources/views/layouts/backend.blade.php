@@ -62,10 +62,16 @@
                             <div class="menu-title">Home</div>
                         </a>
                         <ul>
-                            <li> <a href="{{url('/home')}}"><i class="bx bx-right-arrow-alt"></i>Dashboard</a>
+                            <li> <a href="{{url('/home')}}"><i class="bx bx-right-arrow-alt"></i>Dashboard</a>  
                             </li>
                             <li> <a href="{{url('/profile')}}"><i class="bx bx-right-arrow-alt"></i>Profile</a>
                             </li>
+                            <!-- <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Level Two</a>
+                                <ul>
+                                    <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Level Three</a>
+                                    </li>
+                                </ul>
+                            </li> -->
                         </ul>
                     </li>
 
@@ -74,19 +80,33 @@
                         <a href="javascript:;" class="has-arrow">
                             <div class="parent-icon"><i class='bx bxs-virus'></i>
                             </div>
-                            <div class="menu-title">Covid 19</div>
+                            <div class="menu-title">Layanan Covid UNS</div>
                         </a>
                         <ul>
-                            <li> <a href="{{url('/user/claimcovid')}}"><i class="bx bx-right-arrow-alt"></i>Claim Covid</a>
+                            <li> <a href="{{url('/user/claimcovid')}}"><i class="bx bx-right-arrow-alt"></i>Lapor Positif Covid</a>
                             </li>
-                            <li> <a href="{{url('/user/claimvaksin')}}"><i class="bx bx-right-arrow-alt"></i>Claim Vaksin</a>
+                            <li> <a href="{{url('/user/claimvaksin')}}"><i class="bx bx-right-arrow-alt"></i>lapor Sudah Vaksin</a>
                             </li>
-                            <li> <a href="{{url('/user/gejalacovid')}}"><i class="bx bx-right-arrow-alt"></i>Gejala Covid</a>
+                            <!-- <li> <a href="{{url('/user/gejalacovid')}}"><i class="bx bx-right-arrow-alt"></i>Gejala Covid</a>
+                            </li> -->
+                            <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Info Perawatan</a>
+                                <ul>
+                                    <li> <a href="{{url('/user/isolasimandiri')}}"><i class="bx bx-right-arrow-alt"></i>Isolasi Mandiri</a>
+                                    </li>
+                                    <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Rumah Sehat UNS 1 </a>
+                                    </li>
+                                    <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Rumah Sehat UNS 2</a>
+                                    </li>
+                                    <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>RS / Klinik Lain</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li> <a href="{{url('/user/isolasimandiri')}}"><i class="bx bx-right-arrow-alt"></i>Isolasi Mandiri</a>
-                            </li>
-                            <li> <a href="ecommerce-orders.html"><i class="bx bx-right-arrow-alt"></i>History Pribadi</a>
-                            </li>
+                            <!-- <li> <a href=""><i class="bx bx-right-arrow-alt"></i>Isolasi Mandiri</a>
+                            </li>-->
+                            <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Bantuan Covid Mahasiswa</a>
+                            </li> 
+                            <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Bantuan Covid Karyawan / Tenaga Pendidik</a>
+                            </li> 
                         </ul>
                     </li>
                     @endif
@@ -107,7 +127,7 @@
                         <a href="javascript:;" class="has-arrow">
                             <div class="parent-icon"><i class='bx bx-list-ul' ></i>
                             </div>
-                            <div class="menu-title">Data Covid 19</div>
+                            <div class="menu-title">Data Covid UNS</div>
                         </a>
                         <ul>
                             <li> <a href="{{url('/admin/dataoverall')}}"><i class="bx bx-right-arrow-alt"></i>Data Covid Overall</a>
@@ -116,8 +136,8 @@
                             </li>
                             <li> <a href="{{url('/admin/datavaksin')}}"><i class="bx bx-right-arrow-alt"></i>Data Vaksinasi</a>
                             </li>
-                            <li> <a href="{{url('/admin/datagejala')}}"><i class="bx bx-right-arrow-alt"></i>Data User Bergejala Covid</a>
-                            </li>
+                            <!-- <li> <a href="{{url('/admin/datagejala')}}"><i class="bx bx-right-arrow-alt"></i>Data User Bergejala Covid</a>
+                            </li> -->
                             <li> <a href="{{url('/admin/dataisolasi')}}"><i class="bx bx-right-arrow-alt"></i>Data User Isolasi Mandiri</a>
                             </li>
                         </ul>
@@ -129,15 +149,15 @@
                         <a href="javascript:;" class="has-arrow">
                             <div class="parent-icon"><i class='bx bx-list-ul' ></i>
                             </div>
-                            <div class="menu-title">Data Covid 19</div>
+                            <div class="menu-title">Data Covid UNS</div>
                         </a>
                         <ul>
                             <li> <a href="{{url('/admin/datapositifcovid')}}"><i class="bx bx-right-arrow-alt"></i>Data User Positif Covid</a>
                             </li>
                             <li> <a href="{{url('/admin/datavaksin')}}"><i class="bx bx-right-arrow-alt"></i>Data Vaksinasi</a>
                             </li>
-                            <li> <a href="{{url('/admin/datagejala')}}"><i class="bx bx-right-arrow-alt"></i>Data User Bergejala Covid</a>
-                            </li>
+                            <!-- <li> <a href="{{url('/admin/datagejala')}}"><i class="bx bx-right-arrow-alt"></i>Data User Bergejala Covid</a>
+                            </li> -->
                             <li> <a href="{{url('/admin/dataisolasi')}}"><i class="bx bx-right-arrow-alt"></i>Data User Isolasi Mandiri</a>
                             </li>
                             <li> <a href="{{url('/admin/dataisolasiterpusat')}}"><i class="bx bx-right-arrow-alt"></i>Data User Isolasi Terpusat</a>
@@ -149,7 +169,7 @@
                         <a href="/{{ config('chatify.routes.prefix') }}" class="has-arrow">
                             <div class="parent-icon"><i class='bx bx-chat' ></i>
                             </div>
-                            <div class="menu-title">Fitur Konsultasi</div>
+                            <div class="menu-title">Layanan Konsultasi</div>
                         </a>
                     </li>
                 </ul>
@@ -353,7 +373,7 @@
         <script src="{{asset('CostumStyle/js/app.js')}}"></script>
 
         <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
-        <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apex-custom.js')}}"></script>
+        <!-- <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apex-custom.js')}}"></script> -->
         @yield('CustomScripts')
         <!-- <script src="{{asset('CostumStyle/js/index.js')}}"></script> -->
         

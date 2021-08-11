@@ -45,7 +45,7 @@ a {
 	position: relative
 }
 .sidebar-wrapper {
-	width: 250px;
+	width: 260px;
 	height: 100%;
 	position: fixed;
 	top: 0;
@@ -58,7 +58,7 @@ a {
 	transition: all .2s ease-out
 }
 .sidebar-header {
-	width: 250px;
+	width: 260px;
 	height: 60px;
 	display: flex;
 	align-items: center;

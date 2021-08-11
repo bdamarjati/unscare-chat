@@ -45,6 +45,8 @@
     @if(($vaksin ?? '') == null)
     <div class="btn btn-warning "> Belum Vaksin Covid !  </div>
     @endif
+
+    &nbsp;&nbsp;
     
     <div class="ms-auto">
         <div class="btn-group">
