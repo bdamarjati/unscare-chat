@@ -123,17 +123,17 @@ class ClaimController extends Controller
         
         $hasil_upload = 'folder_covid';
 
-        if($hasiltest != null || $hasilpcr == null){
+        if($hasiltest != null && $hasilpcr == null){
             $nama_gambar = "foto_antigen_".$complete->nim_nip.".".$hasiltest->getClientOriginalExtension();
             $hasiltest->move($hasil_upload,$nama_gambar);
             $nama_pcr = null;
         }
-        if($hasilpcr != null || $hasiltest == null){
+        else if($hasilpcr != null && $hasiltest == null){
             $nama_pcr = "foto_pcr_".$complete->nim_nip.".".$hasilpcr->getClientOriginalExtension();
             $hasilpcr->move($hasil_upload,$nama_pcr);
             $nama_gambar = null;
         }
-        if($hasilpcr != null && $hasiltest != null){
+        else if($hasilpcr != null && $hasiltest != null){
             $nama_gambar = "foto_antigen_".$complete->nim_nip.".".$hasiltest->getClientOriginalExtension();
             $nama_pcr = "foto_pcr_".$complete->nim_nip.".".$hasilpcr->getClientOriginalExtension();
 
@@ -210,6 +210,26 @@ class ClaimController extends Controller
                         'sembuh'=>'sudah'
                     ]
                 );
+
+        ClaimIsolasi::where('id_user',$user->id)->update(
+                [
+                        'selesai'=>'sudah'
+                    ]
+                );
+
+        ClaimIsolasiRSLainnya::where('id_user',$user->id)->update(
+                [
+                        'selesai'=>'sudah'
+                    ]
+                );
+
+        ClaimIsolasiTerpusat::where('id_user',$user->id)->update(
+                [
+                        'selesai'=>'sudah'
+                    ]
+                );
+
+        
                 
         return redirect('user/claimcovid');
     }

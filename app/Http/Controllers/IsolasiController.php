@@ -11,6 +11,8 @@ use App\Models\ClaimCovid;
 use App\Models\ClaimVaksin;
 use App\Models\ClaimGejala;
 use App\Models\ClaimIsolasi;
+use App\Models\ClaimIsolasiTerpusat;
+use App\Models\ClaimIsolasiRSLainnya;
 
 
 class IsolasiController extends Controller
@@ -40,7 +42,10 @@ class IsolasiController extends Controller
         $isolasi = ClaimIsolasi::where('id_user',$user->id)->get()->last();
         // $data = ClaimCovid::where('id_user',$user->id)->get()->last();
 
-        return view('isolasi',compact('user','complete','data','vaksin','gejala','isolasi'));
+        $terpusat = ClaimIsolasiTerpusat::where('id_user',$user->id)->get()->last();
+        $lainnya = ClaimIsolasiRSLainnya::where('id_user',$user->id)->get()->last();
+
+        return view('isolasi',compact('user','complete','data','vaksin','gejala','isolasi','terpusat','lainnya'));
     }
 
     /**

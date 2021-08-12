@@ -80,6 +80,32 @@
 
 <div class="row row-cols-1 row-cols-xl-2">
     <div class="col d-flex">
+        
+        <div class="card radius-10 w-100">
+            <div class="card-body">
+                <div class="text-center">
+                    <i class="bx bx-handicap text-dark font-50"></i>
+                    <h4 class="form-label ">Status Perawatan Saat ini </h4>
+                </div>
+                <div class="login-separater text-center mb-4">
+                    <hr />
+                </div>
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    @if(($isolasi->selesai ?? '') == 'belum' && ($isolasi->status_change ?? '') == 0)
+                    <div class="btn btn-primary "> Sedang Isolasi Mandiri </div>
+                    @endif
+                    @if(($terpusat->selesai ?? '') == 'belum')
+                    <div class="btn btn-danger "> Sedang Isolasi Di Rumah Sehat UNS !!</div>
+                    @endif
+                    @if(($lainnya->selesai ?? '') == 'belum')
+                    <div class="btn btn-success "> Sedang Isolasi Di RS Lainnya </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col d-flex">
         <div class="card radius-10 w-100">
             <div class="card-body">
 
