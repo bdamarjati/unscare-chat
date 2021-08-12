@@ -91,14 +91,27 @@
                     <hr />
                 </div>
                 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="font 50">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item active" aria-current="page"><div class="btn btn-light ">Status Perawatan Saat ini : </div></li>
+                            </ol>
+                        </nav>
+                    </div>&nbsp;&nbsp;
                     @if(($isolasi->selesai ?? '') == 'belum' && ($isolasi->status_change ?? '') == 0)
-                    <div class="btn btn-primary "> Sedang Isolasi Mandiri </div>
-                    @endif
-                    @if(($terpusat->selesai ?? '') == 'belum')
-                    <div class="btn btn-danger "> Sedang Isolasi Di Rumah Sehat UNS !!</div>
-                    @endif
-                    @if(($lainnya->selesai ?? '') == 'belum')
-                    <div class="btn btn-success "> Sedang Isolasi Di RS Lainnya </div>
+                    <div class="btn btn-info "> Sedang Isolasi Mandiri </div>
+                    
+                    @elseif(($terpusat->selesai ?? '') == 'belum')
+                    <div class="btn btn-info "> Sedang Isolasi Di Rumah Sehat UNS !!</div>
+                    
+                    @elseif(($lainnya->selesai ?? '') == 'belum')
+                    <div class="btn btn-info "> Sedang Isolasi Di RS Lainnya </div>
+                    
+                    @elseif(($lainnya->selesai ?? '') == 'belum'  )
+                    <div class="btn btn-info "> Sedang Isolasi Di RS Lainnya </div>
+                    
+                    @else
+                    <div class="btn btn-success "> Sedang Tidak Menjalani Perawatan Covid Dimanapun </div>
                     @endif
                 </div>
             </div>
@@ -109,7 +122,7 @@
         <div class="card radius-10 w-100">
             <div class="card-body">
 
-            <div class="text-center"><i class="bx bx-disc text-dark font-50"></i><h4 class="form-label ">Lapor Isolasi</h4>
+            <div class="text-center"><i class="bx bx-disc text-dark font-50"></i><h4 class="form-label ">Lapor Isolasi Mandiri Selain Covid</h4>
 
             </div>
             <div class="login-separater text-center mb-4"> 
@@ -119,14 +132,13 @@
             @if(($isolasi->id_user ?? '') == null || ($isolasi->selesai ?? '') == 'sudah')
             <form method="post" action="/user/isolasimandiri" enctype="multipart/form-data" >
             @csrf
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label class="form-label">Alasan Isolasi :</label>
                     <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="alasan" id="option" value="" required>                                        
                         <option value="covid">saya positif covid !</option>
-                        <!-- <option value="gejala">saya bergejala covid !</option> -->
                         <option value="lainnya">alasan lain</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label class="form-label">Alasan lain :</label>
                     <textarea type="form-control" class="form-control" placeholder="kasih tanda - (bila tidak ada alasan lain)" name="alasan_lain" id="keterangan" required></textarea>

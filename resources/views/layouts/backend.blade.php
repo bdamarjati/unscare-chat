@@ -87,9 +87,9 @@
                             </li>
                             <li> <a href="{{url('/user/claimvaksin')}}"><i class="bx bx-right-arrow-alt"></i>lapor Sudah Vaksin</a>
                             </li>
-                            <!-- <li> <a href="{{url('/user/gejalacovid')}}"><i class="bx bx-right-arrow-alt"></i>Gejala Covid</a>
-                            </li> -->
-                            <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Info Perawatan</a>
+                            <li> <a href="{{url('/user/isolasimandiri')}}"><i class="bx bx-right-arrow-alt"></i>Info Perawatan Covid</a>
+                            </li>
+                            <!-- <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Info Perawatan</a>
                                 <ul>
                                     <li> <a href="{{url('/user/isolasimandiri')}}"><i class="bx bx-right-arrow-alt"></i>Isolasi Mandiri</a>
                                     </li>
@@ -100,7 +100,7 @@
                                     <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>RS / Klinik Lain</a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <!-- <li> <a href=""><i class="bx bx-right-arrow-alt"></i>Isolasi Mandiri</a>
                             </li>-->
                             <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Bantuan Covid Mahasiswa</a>
