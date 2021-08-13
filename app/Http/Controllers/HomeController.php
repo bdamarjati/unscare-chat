@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\UserData;
 
+// untuk Data Covid
+use App\Models\ClaimCovid;
+use App\Models\ClaimCovidHistory;
+use App\Models\ClaimVaksin;
+use App\Models\ClaimGejala;
+use App\Models\ClaimIsolasi;
+use App\Models\ClaimIsolasiTerpusat;
+use App\Models\ClaimIsolasiRSLainnya;
+
 class HomeController extends Controller
 {
     /**
@@ -35,11 +44,9 @@ class HomeController extends Controller
 
         $user = Auth::user();
         $complete = UserData::where('id_user',$user->id)->get()->first();
-        
-        if($complete->status == 'dokter' && $complete->verified == 'yes'){
+        $data = ClaimCovid::where('id_user',$user->id)->get()->last();
 
-        }
-        return view('home', compact('complete','user'));
+        return view('home', compact('complete','user','data'));
     }
     public function profile()
     {
@@ -48,8 +55,9 @@ class HomeController extends Controller
 
         $user = Auth::user();
         $complete = UserData::where('id_user',$user->id)->get()->first();
+        $data = ClaimCovid::where('id_user',$user->id)->get()->last();
         
-        return view('profile', compact('complete','user'));
+        return view('profile', compact('complete','user','data'));
     }
 
     /**

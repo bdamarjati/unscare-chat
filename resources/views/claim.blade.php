@@ -154,7 +154,7 @@
                             <hr />
                         </div>
 
-                        <form method="post" action="/user/claimcovid" enctype="multipart/form-data">
+                        <form method="post" action="claimcovid" enctype="multipart/form-data">
                             @csrf
 
                             @if(($data ?? '') == null || ($data->sembuh ?? '') == 'sudah')

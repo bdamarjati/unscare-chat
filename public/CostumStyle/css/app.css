@@ -65,10 +65,11 @@ a {
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	padding: 0 15px;
+	padding: 0 20px;
 	z-index: 5;
 	background: #fff;
 	background-clip: padding-box;
+	/* margin-left: 10px; */
 	border-bottom: 1px solid #e4e4e4
 }
 .logo-icon {

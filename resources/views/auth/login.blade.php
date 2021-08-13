@@ -6,6 +6,9 @@
             </a>
         </x-slot>
 
+        <div class="text-center">
+            <img src="{{asset('CostumStyle/images/cardiogram.png')}}" alt="">
+        </div>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -41,12 +44,18 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
+                <!-- @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
-                @endif
+                    @endif -->
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ url('register') }}">
+                        Register New Account
+                    </a>
 
+                <!-- <a href="#" class="ml-3 btn btn-sm">
+                    Register New Account
+                </a> -->
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>

@@ -7,25 +7,27 @@
 @endsection
 
 @if(($complete->status ?? '') != 'biasa' && ($complete->verified ?? '') == 'yes')
-    @section('status')
-        {{ $complete->status }} &nbsp;&&nbsp; {{ $user->role }}
-    @endsection
-@else 
-    @section('status')
-        {{ $user->role }}
-    @endsection
+@section('status')
+{{ $complete->status }} &nbsp;&&nbsp; {{ $user->role }}
+@endsection
+@else
+@section('status')
+{{ $user->role }}
+@endsection
 @endif
 
 @section('content')
-    <!--Container-->
-    <div class="container">
-        
-        <!--breadcrumb-->				
-        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+<!--Container-->
+<div class="container">
+
+    <!--breadcrumb-->
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="font 50">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item active" aria-current="page"><div class="btn btn-light ">Status saat ini </div></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <div class="btn btn-light ">Status saat ini </div>
+                    </li>
                 </ol>
             </nav>
         </div>&nbsp;&nbsp;
@@ -46,13 +48,14 @@
         <div class="btn btn-primary "> Sudah Vaksin ! dosis {{$vaksin->dosis_ke}}</div>
         @endif
         @if(($vaksin ?? '') == null)
-        <div class="btn btn-warning "> Belum Vaksin Covid !  </div>
+        <div class="btn btn-warning "> Belum Vaksin Covid ! </div>
         @endif
-        
+
         <div class="ms-auto">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Settings</button>
-                <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown">
                     <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
@@ -69,20 +72,20 @@
     <!--end Container-->
 
     @if(session()->get('message'))
-        <div class="alert alert-info alert-dismissable mt-20" role="alert">
-            <h4>{{ session()->get('message') }}  </h4> 
-        </div>
+    <div class="alert alert-info alert-dismissable mt-20" role="alert">
+        <h4>{{ session()->get('message') }} </h4>
+    </div>
     @endif
 
     <!-- Page Break -->
-    <hr/>
+    <hr />
     <p class="mb-0 text-uppercase display-5 text-center">wellcome to uns care</p>
-    <hr/>
+    <hr />
     <!-- end of Page Break -->
 
     <!-- Shortcut -->
     <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-        <a href="{{url('/user/isolasimandiri')}}"class="col">
+        <a href="{{url('/user/isolasimandiri')}}" class="col">
             <div class="card radius-10">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -91,7 +94,7 @@
                             <h4 class="my-1">Isolasi Mandiri</h4>
                             <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
-                        <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bx-block' ></i>
+                        <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bx-block'></i>
                         </div>
                     </div>
                     <!-- <div id="chart1"></div> -->
@@ -132,7 +135,7 @@
         </a>
     </div>
     <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-        <a href="#"class="col">
+        <a href="#" class="col">
             <div class="card radius-10">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -141,7 +144,7 @@
                             <h4 class="my-1">Isolasi Terpusat</h4>
                             <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
-                        <div class="widgets-icons bg-light-primary text-primary ms-auto"><i class='bx bxs-group' ></i>
+                        <div class="widgets-icons bg-light-primary text-primary ms-auto"><i class='bx bxs-group'></i>
                         </div>
                     </div>
                     <!-- <div id="chart1"></div> -->
@@ -182,4 +185,4 @@
         </a>
     </div>
     <!-- end Shortcut -->
-@endsection
+    @endsection
