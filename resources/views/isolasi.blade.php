@@ -120,9 +120,9 @@
 
                 @if(($isolasi->selesai ?? '') == 'belum' && ($isolasi->status_change ?? '') == 0)
                 <div class="mb-3">
-                    <label class="form-label" id="isomansendirilabel" >Tinggal Sendirian ? :</label>
+                    <label class="form-label" id="isomansendirilabel">Tinggal Sendirian ? :</label>
                     <input class="form-control" list="datalistOptions" id="isomansendiri" placeholder="ya"
-                        name="sendirian?" >
+                        name="sendirian?">
                     <datalist id="datalistOptions">
                         <option value="Ya, Saya tinggal sendirian">
                         <option value="Tidak, Ada teman/orang lain yang tinggal di tempat yang sama">
@@ -130,20 +130,50 @@
                     </datalist>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" id="isomanalamatlabel" >Alamat lengkap
+                    <label class="form-label" id="isomanalamatlabel">Alamat lengkap
                         Kos/Asrama/Rumah sewa, disekitar UNS <br>(contoh, kos xx, jalan xx, gang xx, RT/RW, kelurahan,
                         kecamatan, Surakarta) :</label>
-                    <textarea type="form-control" class="form-control" placeholder="" name="alamat" id="isomanalamat"
-                        ></textarea>
+                    <textarea type="form-control" class="form-control" placeholder="" name="alamat"
+                        id="isomanalamat"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" id="isomanurllabel" >URL tempat tinggal saat ini
+                    <label class="form-label" id="isomanurllabel">URL tempat tinggal saat ini
                         (koordinat G-Map) :</label>
-                    <textarea type="form-control" class="form-control" placeholder="" name="url" id="isomanurl"
-                        ></textarea>
+                    <textarea type="form-control" class="form-control" placeholder="" name="url"
+                        id="isomanurl"></textarea>
                 </div>
                 @elseif(($terpusat->selesai ?? '') == 'belum')
+                <div class="mb-3">
+                    <label class="form-label" id="rslabel" >Rumah Sehat UNS :</label>
+                    <select class="form-select form-select-sm mb-3" name="rumahsehat" id="rs"
+                        placeholder="pilih salah 1" value="{{$terpusat->rumah_sehat}}" disabled>
+                        <option value="RS1">Rumah Sehat UNS 1 (RS UNS)</option>
+                        <option value="RS2">Rumah Sehat UNS 2 (Asrama Mahasiswa)</option>
+                    </select>
+                    <!-- <input class="form-control" list="datalistOptions" id="rs" placeholder="ya" name="rumahsehat" style="display:none">
+                                <datalist id="datalistOptions">
+                                    <option value="Rumah Sehat UNS 1 (RS UNS)">
+                                    <option value="Rumah Sehat UNS 2 (Asrama Mahasiswa)">
+                                </datalist> -->
+                </div>
                 @elseif(($lainnya->selesai ?? '') == 'belum')
+                <div class="mb-3">
+                    <label class="form-label" id="rslainnamalabel" >Nama Tempat Perawatan :</label>
+                    <input type="form-control" class="form-control" placeholder="" name="nama_tempat" id="rslainnama"
+                        value="{{$lainnya->nama_tempat}}" disabled></input>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="rslainalamatlabel" >Alamat lengkap Tempat
+                        Perawatan :</label>
+                    <input type="form-control" class="form-control" placeholder="" name="alamat_tempat"
+                        id="rslainalamat" value="{{$lainnya->alamat_tempat}}" disabled></input>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="rslainurllabel" >URL tempat tinggal saat ini
+                        (koordinat G-Map) :</label>
+                    <textarea type="form-control" class="form-control" placeholder="{{$lainnya->url_tempat}}" name="url_tempat" id="rslainurl"
+                        value="{{$lainnya->url_tempat}}" disabled></textarea>
+                </div>
                 @else
 
                 @endif

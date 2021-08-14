@@ -20,19 +20,19 @@
                                 @csrf
 									<div class="mb-3">
 										<label class="form-label">Nama Lengkap :</label>
-										<input type="text" class="form-control" placeholder="" name="nama_lengkap" id="nama_lengkap">
+										<input type="text" class="form-control" required placeholder="" name="nama_lengkap" id="nama_lengkap">
 									</div>
 									<div class="mb-3">
 										<label class="form-label">NIM / NIP :</label>
-										<input type="text" class="form-control" placeholder="" name="nim_nip" id="nim_nip">
+										<input type="text" class="form-control" required placeholder="" name="nim_nip" id="nim_nip">
 									</div>
 									<div class="mb-3">
 										<label class="form-label">No Telp :</label>
-										<input type="text" class="form-control" placeholder="" name="no_telp" id="no_telp">
+										<input type="text" class="form-control" required placeholder="" name="no_telp" id="no_telp">
 									</div>
                                     <div class="mb-3">
                                         <label class="form-label">Status :</label>
-                                        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="option" id="option">
+                                        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="option" required id="option">
                                             <!-- <option selected>Open this select menu</option> -->
                                                 <option value="dokter">dokter</option>
                                                 <option value="tenaga medis">tenaga medis</option>
@@ -41,11 +41,11 @@
                                     </div>
 									<div class="mb-3">
 										<label class="form-label">Alamat :</label>
-										<textarea type="form-control" class="form-control" placeholder="" name="alamat" id="alamat"></textarea>
+										<textarea type="form-control" class="form-control" placeholder="" name="alamat" id="alamat" required></textarea>
 									</div>
                                     <div class="mb-3">
 										<label class="form-label">Foto KTP :</label>
-										<input type="file" class="form-control" id="file_ktp" name="file_ktp" data-toggle="custom-file-input" multiple>
+										<input type="file" class="form-control" id="file_ktp" name="file_ktp" data-toggle="custom-file-input" required multiple>
 									</div>
                                     <br>
                                     <div class="mb-3">
