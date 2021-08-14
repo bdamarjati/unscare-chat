@@ -146,8 +146,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Lengkap</th>
-                        <th>File Hasil Test</th>
+                        <th>NIM / NIP</th>
+                        <th>File Antigen</th>
+                        <th>File PCR</th>
                         <th>Keterangan</th>
                         <th>Sudah Sembuh ?</th>
                         <th>Tanggal Lapor</th>
@@ -160,9 +161,18 @@
                     @foreach ($data as $row)
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->nama_lengkap}}</td>
-                        <td><a href="{{url('/admin/downloadcovid/'.$row->id_user)}}" class="btn btn-success"><i
+                        <td>{{$row->nim_nip}}</td>
+                        <td>
+                            @if(($row->gambar_hasiltest ?? '') != null)
+                            <a href="{{url('/admin/downloadcovid/'.$row->id_user)}}" class="btn btn-success"><i
+                                    class="bx bx-arrow-to-bottom"></i></a>
+                            @endif
+                        </td>
+                        <td>
+                            @if(($row->gambar_pcr ?? '') != null)
+                            <a href="{{url('/admin/downloadswabpcr/'.$row->id_user)}}" class="btn btn-success"><i
                                     class="bx bx-arrow-to-bottom"></i></a></td>
+                        @endif
                         <td>{{$row->keterangan}}</td>
                         <td>{{$row->sembuh}}</td>
                         <td>{{$row->created_at}}</td>

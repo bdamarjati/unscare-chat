@@ -92,11 +92,11 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <p class="mb-0 text-secondary">Lapor</p>
-                            <h4 class="my-1">Isolasi Mandiri</h4>
+                            <p class="mb-0 text-secondary">Informasi</p>
+                            <h4 class="my-1">Isolasi Covid-19</h4>
                             <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
-                        <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bx-block'></i>
+                        <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bx-handicap '></i>
                         </div>
                     </div>
                     <!-- <div id="chart1"></div> -->
@@ -175,7 +175,7 @@
                     <div class="d-flex align-items-center">
                         <div>
                             <p class="mb-0 text-secondary">Layanan</p>
-                            <h4 class="my-1">Bantuan Isolasi</h4>
+                            <h4 class="my-1">Bantuan Isoman</h4>
                             <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
                         <div class="widgets-icons bg-light-info text-info ms-auto"><i class='bx bx-dollar'></i>

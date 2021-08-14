@@ -91,24 +91,7 @@
                         <li> <a href="{{url('/user/isolasimandiri')}}"><i class="bx bx-right-arrow-alt"></i>Info
                                 Perawatan Covid</a>
                         </li>
-                        <!-- <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Info Perawatan</a>
-                                <ul>
-                                    <li> <a href="{{url('/user/isolasimandiri')}}"><i class="bx bx-right-arrow-alt"></i>Isolasi Mandiri</a>
-                                    </li>
-                                    <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Rumah Sehat UNS 1 </a>
-                                    </li>
-                                    <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Rumah Sehat UNS 2</a>
-                                    </li>
-                                    <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>RS / Klinik Lain</a>
-                                    </li>
-                                </ul>
-                            </li> -->
-                        <!-- <li> <a href=""><i class="bx bx-right-arrow-alt"></i>Isolasi Mandiri</a>
-                            </li>-->
-                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Bantuan Covid Mahasiswa</a>
-                        </li>
-                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Bantuan Covid Karyawan / Tenaga
-                                Pendidik</a>
+                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Bantuan Terdampak Covid</a>
                         </li>
                     </ul>
                 </li>
@@ -169,10 +152,7 @@
                         <!-- <li> <a href="{{url('/admin/datagejala')}}"><i class="bx bx-right-arrow-alt"></i>Data User Bergejala Covid</a>
                             </li> -->
                         <li> <a href="{{url('/admin/dataisolasi')}}"><i class="bx bx-right-arrow-alt"></i>Data User
-                                Isolasi Mandiri</a>
-                        </li>
-                        <li> <a href="{{url('/admin/dataisolasiterpusat')}}"><i class="bx bx-right-arrow-alt"></i>Data
-                                User Isolasi Terpusat</a>
+                                Yang Sedang Isolasi</a>
                         </li>
                     </ul>
                 </li>
@@ -182,6 +162,13 @@
                         <div class="parent-icon"><i class='bx bxs-chat'></i>
                         </div>
                         <div class="menu-title">Layanan Konsultasi</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="">
+                        <div class="parent-icon"><i class='bx bxs-folder'></i>
+                        </div>
+                        <div class="menu-title">Informasi Dan Kontak Penting</div>
                     </a>
                 </li>
             </ul>

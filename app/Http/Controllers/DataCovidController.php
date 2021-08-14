@@ -103,6 +103,16 @@ class DataCovidController extends Controller
         return $complete;
     }
 
+    public function downloadswabpcr($id)
+    {
+        $complete = ClaimCovid::where('id_user',$id)->get()->first();
+        $file_name = $complete->gambar_pcr;
+        $file_path = public_path('folder_covid/'.$file_name);
+        return response()->download($file_path);
+        
+        return $complete;
+    }
+
     /**
      * Remove the specified resource from storage.
      *

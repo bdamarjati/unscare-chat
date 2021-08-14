@@ -111,6 +111,7 @@ Route::patch('admin/datapersonal/{id}', [DataPersonalController::class, 'update'
 // -> Untuk Data Covid
 Route::get('/admin/datapositifcovid', [DataCovidController::class, 'index']);
 Route::get('/admin/downloadcovid/{id}', [DataCovidController::class, 'downloadcovid'])->name('downloadcovid');
+Route::get('/admin/downloadswabpcr/{id}', [DataCovidController::class, 'downloadswabpcr'])->name('downloadswabpcr');
 
 // -> Untuk Data Vaksin
 Route::get('/admin/datavaksin', [DataVaksinController::class, 'index']);

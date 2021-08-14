@@ -203,7 +203,8 @@ a {
 }
 .sidebar-wrapper .metismenu ul {
 	border: 1px solid #ededed;
-	background: #fff
+	background: #fff;
+	border-radius: 5px;
 }
 .sidebar-wrapper .metismenu ul ul a {
 	padding: 8px 15px 8px 30px
@@ -211,10 +212,14 @@ a {
 .sidebar-wrapper .metismenu ul ul ul a {
 	padding: 8px 15px 8px 45px
 }
-.sidebar-wrapper .metismenu .mm-active>a, .sidebar-wrapper .metismenu a:active, .sidebar-wrapper .metismenu a:focus, .sidebar-wrapper .metismenu a:hover {
+.sidebar-wrapper .metismenu .mm-active>a, 
+.sidebar-wrapper .metismenu a:active, 
+.sidebar-wrapper .metismenu a:focus, 
+.sidebar-wrapper .metismenu a:hover {
 	color: #0d6efd;
 	text-decoration: none;
-	background: rgb(13 110 253 / .12)
+	background: rgb(13 110 253 / .12);
+	border-radius: 5px;
 }
 .menu-label {
 	padding: 20px 15px 5px 5px;
