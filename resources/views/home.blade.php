@@ -51,6 +51,8 @@
         <div class="btn btn-warning "> Belum Vaksin Covid ! </div>
         @endif
 
+        &nbsp;&nbsp;    
+
         <div class="ms-auto">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Settings</button>

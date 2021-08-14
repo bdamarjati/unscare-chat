@@ -15,7 +15,7 @@
                                     <div class="login-separater text-center mb-4"> 
                                         <hr/>
                                     </div>
-								<form method="post" action="/userdata/{{$user->id}}" enctype="multipart/form-data" >
+								<form method="post" action="userdata/{{$user->id}}" enctype="multipart/form-data" >
                                 @method('PATCH')
                                 @csrf
 									<div class="mb-3">

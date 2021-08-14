@@ -129,7 +129,11 @@ class DataPersonalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        UserData::where('id_user',$id)->update([
+            'verified'     => 'yes',
+        ]);
+
+        return redirect('admin/useradministration')->with('message','Data Berhasil Di Update !');
     }
 
     /**

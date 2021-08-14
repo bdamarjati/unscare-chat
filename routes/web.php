@@ -105,6 +105,8 @@ Route::patch('/user/isolasimandiri/{id}', [IsolasiController::class, 'update'])-
 
 // -> Untuk Data Administtasi User
 Route::get('/admin/useradministration', [AdministrationController::class, 'index']);
+Route::get('admin/datapersonal/{id}', [DataPersonalController::class, 'show'])->name('show');
+Route::patch('admin/datapersonal/{id}', [DataPersonalController::class, 'update'])->name('update');
 
 // -> Untuk Data Covid
 Route::get('/admin/datapositifcovid', [DataCovidController::class, 'index']);
@@ -127,7 +129,6 @@ Route::get('/admin/dataisolasiterpusat', [DataIsolasiController::class, 'isomanT
 // +---------------------------------------------------------------------------------------+ //
 
 // -> Untuk Check Data Pasien
-Route::get('/datapersonal/{id}', [DataPersonalController::class, 'show'])->name('show');
 Route::get('/datapersonalcovid/{id}', [DataPersonalController::class, 'showCovid'])->name('showCovid');
 Route::get('/datapersonalvaksin/{id}', [DataPersonalController::class, 'showVaksin'])->name('showVaksin');
 Route::get('/datapersonalgejala/{id}', [DataPersonalController::class, 'showGejala'])->name('showGejala');

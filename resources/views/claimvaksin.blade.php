@@ -141,7 +141,7 @@
                     <hr/>
                 </div>
                 <!-- <form method="post" action="/user/claimvaksin/{{$user->id}}" enctype="multipart/form-data" > -->
-                <form method="post" action="/user/claimvaksin" enctype="multipart/form-data" >
+                <form method="post" action="claimvaksin" enctype="multipart/form-data" >
                 @csrf
                     <div class="mb-3">
                         <label class="form-label">Dosis ke :</label>

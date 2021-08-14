@@ -113,15 +113,44 @@
                     @elseif(($lainnya->selesai ?? '') == 'belum')
                     <div class="btn btn-info "> Sedang Isolasi Di RS Lainnya </div>
 
-                    @elseif(($lainnya->selesai ?? '') == 'belum' )
-                    <div class="btn btn-info "> Sedang Isolasi Di RS Lainnya </div>
-
                     @else
                     <div class="btn btn-success "> Sedang Tidak Menjalani Perawatan Covid Dimanapun </div>
                     @endif
                 </div>
+
+                @if(($isolasi->selesai ?? '') == 'belum' && ($isolasi->status_change ?? '') == 0)
+                <div class="mb-3">
+                    <label class="form-label" id="isomansendirilabel" >Tinggal Sendirian ? :</label>
+                    <input class="form-control" list="datalistOptions" id="isomansendiri" placeholder="ya"
+                        name="sendirian?" >
+                    <datalist id="datalistOptions">
+                        <option value="Ya, Saya tinggal sendirian">
+                        <option value="Tidak, Ada teman/orang lain yang tinggal di tempat yang sama">
+                        <option value="Lainnya">
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="isomanalamatlabel" >Alamat lengkap
+                        Kos/Asrama/Rumah sewa, disekitar UNS <br>(contoh, kos xx, jalan xx, gang xx, RT/RW, kelurahan,
+                        kecamatan, Surakarta) :</label>
+                    <textarea type="form-control" class="form-control" placeholder="" name="alamat" id="isomanalamat"
+                        ></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="isomanurllabel" >URL tempat tinggal saat ini
+                        (koordinat G-Map) :</label>
+                    <textarea type="form-control" class="form-control" placeholder="" name="url" id="isomanurl"
+                        ></textarea>
+                </div>
+                @elseif(($terpusat->selesai ?? '') == 'belum')
+                @elseif(($lainnya->selesai ?? '') == 'belum')
+                @else
+
+                @endif
+
             </div>
         </div>
+
 
     </div>
     <div class="col d-flex">
@@ -221,5 +250,5 @@
             </div>
         </div>
     </div>
-
-    @endsection
+</div>
+@endsection

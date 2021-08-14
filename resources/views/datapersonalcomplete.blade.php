@@ -63,40 +63,48 @@
                         <hr />
                     </div>
 
+                    <form method="post" action="{{$specific->id_user}}" enctype="multipart/form-data">
+                    @method('PATCH')
+                    @csrf
+                        <div class="mb-3">
+                            <label class="form-label">Nama Lengkap :</label>
+                            <input type="text" class="form-control" value="{{$specific->nama_lengkap}}"
+                                name="nama_lengkap" id="nama_lengkap" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">NIM / NIP :</label>
+                            <input type="text" class="form-control" value="{{$specific->nim_nip}}" name="nim_nip"
+                                id="nim_nip" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">No Telp :</label>
+                            <input type="text" class="form-control" value="{{$specific->no_telp}}" name="no_telp"
+                                id="no_telp" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Status :</label>
+                            <input type="text" class="form-control" value="{{$specific->status}}" name="no_telp"
+                                id="no_telp" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Alamat :</label>
+                            <input type="form-control" class="form-control" value="{{$specific->alamat}}" name="alamat"
+                                id="alamat" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Foto KTP :</label><br>
+                            <img src="{{asset('folder_ktp/'.$specific->gambar_ktp)}}" alt=""
+                                style="width:350px;height:300px;"> </div>
+                        <br>
 
-                    <div class="mb-3">
-                        <label class="form-label">Nama Lengkap :</label>
-                        <input type="text" class="form-control" value="{{$specific->nama_lengkap}}" name="nama_lengkap"
-                            id="nama_lengkap" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">NIM / NIP :</label>
-                        <input type="text" class="form-control" value="{{$specific->nim_nip}}" name="nim_nip"
-                            id="nim_nip" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">No Telp :</label>
-                        <input type="text" class="form-control" value="{{$specific->no_telp}}" name="no_telp"
-                            id="no_telp" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Status :</label>
-                        <input type="text" class="form-control" value="{{$specific->status}}" name="no_telp"
-                            id="no_telp" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Alamat :</label>
-                        <input type="form-control" class="form-control" value="{{$specific->alamat}}" name="alamat"
-                            id="alamat" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Foto KTP :</label><br>
-                        <img src="{{asset('folder_ktp/'.$specific->gambar_ktp)}}" alt=""
-                            style="width:350px;height:300px;"> </div>
-                    <br>
+                        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                            
+                                <button type="submit" id="covid" class="btn btn-success">Verifikasi Status</button>
+                            &nbsp;&nbsp;
+                            <div class="btn btn-primary "> Update Data </div>
 
-
-
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

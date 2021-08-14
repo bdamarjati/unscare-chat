@@ -276,7 +276,7 @@
 
                         <!-- INI BATAS ANTARA POSiTIF DAN NEGATIF -->
                         @if(($data->id_user ?? '') != null)
-                        <form method="post" action="/user/claimcovid/{{$data->id}}" enctype="multipart/form-data">
+                        <form method="post" action="claimcovid/{{$data->id}}" enctype="multipart/form-data">
                             @method('PATCH')
                             @csrf
                             @if(($data->sembuh ?? '') == 'belum')
