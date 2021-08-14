@@ -8,6 +8,7 @@ use Auth;
 use App\Models\UserData;
 use App\Models\ClaimCovid;
 use App\Models\ClaimVaksin;
+use App\Models\ClaimVaksinHistory;
 
 class ClaimVaksinController extends Controller
 {
@@ -69,6 +70,10 @@ class ClaimVaksinController extends Controller
                 'keterangan'    => $request->keterangan,
                 'link'          => $request->link
             ]);
+            ClaimVaksinHistory::Create([
+                'id_user'       => $user->id,
+                'dosis'         => $request->dosis
+            ]);
             return redirect('user/claimvaksin')->with('message','Data Sudah Di Update, Terimakasih telah melapor !!');
         }
 
@@ -82,6 +87,9 @@ class ClaimVaksinController extends Controller
                 'dosis_ke'      => $request->dosis,
                 'keterangan'    => $request->keterangan,
                 'link'          => $request->link
+            ]);
+            ClaimVaksinHistory::where('id_user',$user->id)->update([
+                'dosis'         => $request->dosis
             ]);
             return redirect('user/claimvaksin')->with('message','Data Sudah Di Update, Terimakasih telah melapor !!');
         }

@@ -5,12 +5,11 @@ getData();
 
 function getData(){
     $.ajax({
-        url: '/api/graphPositif',
+        url: '../api/graphPositif',
         success: function(data){
             number = data.number;
             date = data.day;
             renderChart();
-            document.getElementById("debug").innerHTML = number;
         }
     });
 }

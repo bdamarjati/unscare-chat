@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('graphPositif', [GraphController::class,'graphPositif']);
+Route::get('graphVaccine', [GraphController::class,'graphVaccine']);
