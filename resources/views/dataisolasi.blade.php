@@ -17,6 +17,8 @@
 @endif
 
 @section('content')
+<div class="container">
+
 	<!--breadcrumb-->				
 	<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
 		<div class="breadcrumb-title pe-3">Tables</div>
@@ -107,3 +109,4 @@
 	</div>
 	<!-- end of Main Table -->
 @endsection
+</div>

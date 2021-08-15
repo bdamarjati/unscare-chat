@@ -18,7 +18,6 @@
 
 @section('content')
 <div class="container">
-
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Tables</div>
@@ -31,7 +30,7 @@
                 </ol>
             </nav>
         </div>
-
+    
         <div class="ms-auto">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Settings</button>
@@ -50,25 +49,25 @@
         </div>
     </div>
     <!--end of breadcrumb-->
-
+    
     @if(session()->get('message'))
     <div class="alert alert-info alert-dismissable text-center mt-20" role="alert">
         <h4>{{ session()->get('message') }} </h4>
     </div>
     @endif
-
+    
     @if(session()->get('warning'))
     <div class="alert alert-danger alert-dismissable mt-20 text-center" role="alert">
         <h4>{{ session()->get('warning') }} </h4>
     </div>
     @endif
-
+    
     <!-- Page Break -->
     <hr />
     <p class="mb-0 text-uppercase display-6 text-center">Data user yang positif covid-19</p>
     <hr />
     <!-- end of Page Break -->
-
+    
     <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
         <div class="col">
             <div class="card radius-10">
@@ -77,61 +76,52 @@
                         <div>
                             <p class="mb-0 text-secondary">Total Pasien Sembuh </p>
                             <h4 class="my-1">{{$sembuh}}</h4>
-                            <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$34 Since
-                                last
+                            <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$34 Since last
                                 week</p>
                         </div>
                         <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bxs-capsule'></i>
                         </div>
-                        <!-- <div id="chart1"></div> -->
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card radius-10">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Total User Yang Pernah Positif</p>
-                                <h4 class="my-1">{{$pernahcovid}}</h4>
-                                <p class="mb-0 font-13 text-warning"><i class='bx bxs-up-arrow align-middle'></i>14%
-                                    Since last
-                                    week</p>
-                            </div>
-                            <div class="widgets-icons bg-light-warning text-warning ms-auto"><i
-                                    class='bx bxs-group'></i>
-                            </div>
-                        </div>
-                        <!-- <div id="chart2"></div> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="card radius-10">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Total Pasien Positif Saat Ini </p>
-                                <h4 class="my-1">{{$total}}</h4>
-                                <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>12.4%
-                                    Since
-                                    last week</p>
-                            </div>
-                            <div class="widgets-icons bg-light-danger text-danger ms-auto"><i class='bx bxs-virus'></i>
-                            </div>
-                        </div>
-                        <!-- <div id="chart3"></div> -->
-                    </div>
+                    <!-- <div id="chart1"></div> -->
                 </div>
             </div>
         </div>
-        <!-- DEBUG -->
-        <!-- <div class="card">
-        <div>
-            <h3 id="debug">DEBUG</h3>
-        </div> -->
+        <div class="col">
+            <div class="card radius-10">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Total User Yang Pernah Positif</p>
+                            <h4 class="my-1">{{$pernahcovid}}</h4>
+                            <p class="mb-0 font-13 text-warning"><i class='bx bxs-up-arrow align-middle'></i>14% Since last
+                                week</p>
+                        </div>
+                        <div class="widgets-icons bg-light-warning text-warning ms-auto"><i class='bx bxs-group'></i>
+                        </div>
+                    </div>
+                    <!-- <div id="chart2"></div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card radius-10">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Total Pasien Positif Saat Ini </p>
+                            <h4 class="my-1">{{$total}}</h4>
+                            <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>12.4% Since
+                                last week</p>
+                        </div>
+                        <div class="widgets-icons bg-light-danger text-danger ms-auto"><i class='bx bxs-virus'></i>
+                        </div>
+                    </div>
+                    <!-- <div id="chart3"></div> -->
+                </div>
+            </div>
+        </div>
     </div>
-
+    
     <!-- Stat -->
     <div class="card">
         <div class="card-body">
@@ -141,7 +131,7 @@
         </div>
     </div>
     <!-- end of Stat -->
-
+    
     <!-- Main Table -->
     <div class="card">
         <div class="card-body">
@@ -150,28 +140,12 @@
                 <div style="float:right; position: sticky;">
                     <div class="col-sm-9 text-secondary">
                         <!-- <input type="submit" class="btn btn-success px-4" value="Import Data" /> -->
-                        <button type="button" class="btn btn-success mr-5" data-toggle="modal"
-                            data-target="#importCovid">
+                        <button type="button" class="btn btn-success mr-5" data-toggle="modal" data-target="#importCovid">
                             IMPORT DATA
                         </button>
                     </div>
                 </div>
                 @endif
-                <div>
-                    <table cellspacing="5" cellpadding="5" border="0">
-                        <tbody>
-                            <tr>
-                                <td>Minimum date:</td>
-                                <td><input type="text" id="min" name="min"></td>
-                            </tr>
-                            <tr>
-                                <td>Maximum date:</td>
-                                <td><input type="text" id="max" name="max"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </br>
                 <table cellspacing="5" cellpadding="5" border="0">
                     <tbody>
                         <tr>
@@ -239,7 +213,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Import Excel -->
     <div class="modal fade" id="importCovid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -250,14 +224,14 @@
                         <h5 class="modal-title" id="exampleModalLabel">Import Data Covid</h5>
                     </div>
                     <div class="modal-body">
-
+    
                         {{ csrf_field() }}
-
+    
                         <label>Pilih file excel</label>
                         <div class="form-group">
                             <input type="file" name="file" required="required">
                         </div>
-
+    
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -268,6 +242,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- end of Main Table -->
 @endsection
