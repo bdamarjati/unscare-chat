@@ -38,7 +38,7 @@ $(function () {
         // DataTables initialisation
         var table = $('#example2').DataTable({
             lengthChange: false,
-            buttons: ['copy', 'excel', 'pdf', 'print'],
+            buttons: ['copy', 'excel', 'pdf', 'print', 'pageLength'],
         });
         // Refilter the table
         $('#min, #max').on('change', function () {

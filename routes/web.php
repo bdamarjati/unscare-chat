@@ -27,6 +27,9 @@ use App\Http\Controllers\DataGejalaController;
 use App\Http\Controllers\DataVaksinController;
 use App\Http\Controllers\DataIsolasiController;
 
+// Imort Data Covid
+use App\Http\Controllers\ImportController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -144,3 +147,6 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
 // Emergency / Experiment Routes
 Route::get('/chart', [HomeController::class, 'chart'])->name('chart');
+
+// Import Data from Excel
+Route::post('/datapositifcovid/import_excel',[ImportController::class,'import_excel'])->name('importCovid');
