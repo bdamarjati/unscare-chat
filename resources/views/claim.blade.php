@@ -161,7 +161,7 @@
                             <div class="mb-3">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Keterangan :</label>
                                 <textarea type="form-control" class="form-control" placeholder="" name="keterangan"
-                                    id="" style="text-transform:uppercase" required></textarea>
+                                    id="" required></textarea>
                             </div>
                             <!-- <div class="mb-3">
                                 <input type="text" class="form-control" name="Name" size="20" maxlength="20"

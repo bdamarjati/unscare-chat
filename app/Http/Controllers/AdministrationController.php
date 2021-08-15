@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\UserData;
+use App\Models\User;
 
 // untuk Data Covid
 use App\Models\ClaimCovid;
@@ -36,6 +37,22 @@ class AdministrationController extends Controller
         $data = UserData::join('users','users.id','=','user_data.id_user')->get();
 
         return view('listuser',compact('user','complete','data'));
+    }
+
+    public function updaterole($id)
+    {
+        // return $id;
+        $user = Auth::user();
+        // $complete = UserData::where('id_user',$user->id)->get()->first();
+        // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
+        
+        User::where('id',$id)->update(
+                [
+                        'role'=>'operator',
+                    ]
+                );
+
+        return redirect('admin/useradministration')->with('message','Data Berhasil Di Update !');
     }
 
     /**

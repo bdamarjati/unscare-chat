@@ -142,11 +142,11 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <p class="mb-0 text-secondary">Lapor</p>
-                            <h4 class="my-1">Isolasi Terpusat</h4>
+                            <p class="mb-0 text-secondary">Informasi</p>
+                            <h4 class="my-1">Data Statistik</h4>
                             <p class="mb-0 font-13 text-light"><i class='bx bxs-up-arrow align-middle'></i></p>
                         </div>
-                        <div class="widgets-icons bg-light-primary text-primary ms-auto"><i class='bx bxs-group'></i>
+                        <div class="widgets-icons bg-light-primary text-primary ms-auto"><i class='bx bx-stats'></i>
                         </div>
                     </div>
                     <!-- <div id="chart1"></div> -->

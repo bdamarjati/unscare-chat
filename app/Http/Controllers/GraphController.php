@@ -19,7 +19,7 @@ class GraphController extends Controller
         $day = new Collection();
         $date = new Collection();
         for($i=1;$i<=31;$i++){
-            $data = ClaimCovid::whereDay('created_at',$i)->pluck('created_at');
+            $data = ClaimCovid::whereDay('created_at',$i)->where('status_verified',1)->pluck('created_at');
             $count = count($data);
             if($count != null){
                 $number->push($count);
