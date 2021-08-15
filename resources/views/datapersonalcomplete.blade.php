@@ -100,8 +100,9 @@
                         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
                             
                                 <button type="submit" id="covid" class="btn btn-success">Verifikasi Status</button>
-                            &nbsp;&nbsp;
-                            <div class="btn btn-primary "> Update Data </div>
+                                &nbsp;&nbsp;
+                                <a href="{{url('/admin/updaterole/'.$specific->id_user)}}" type="submit" id="covid" class="btn btn-primary">Jadikan Operator</a>
+                            <!-- <div class="btn btn-primary "> Update Data </div> -->
 
                         </div>
                     </form>

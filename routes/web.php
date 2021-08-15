@@ -107,6 +107,8 @@ Route::patch('/user/isolasimandiri/{id}', [IsolasiController::class, 'update'])-
 Route::get('/admin/useradministration', [AdministrationController::class, 'index']);
 Route::get('admin/datapersonal/{id}', [DataPersonalController::class, 'show'])->name('show');
 Route::patch('admin/datapersonal/{id}', [DataPersonalController::class, 'update'])->name('update');
+// Route::get('/admin/updaterole/{id}', [AdministrationController::class, 'updaterole']->name('updatedrole'));
+Route::get('/admin/updaterole/{id}', [AdministrationController::class, 'updaterole'])->name('updatedrole');
 
 // -> Untuk Data Covid
 Route::get('/admin/datapositifcovid', [DataCovidController::class, 'index']);
@@ -135,12 +137,15 @@ Route::get('/datapersonalvaksin/{id}', [DataPersonalController::class, 'showVaks
 Route::get('/datapersonalgejala/{id}', [DataPersonalController::class, 'showGejala'])->name('showGejala');
 Route::get('/datapersonalisolasi/{id}', [DataPersonalController::class, 'showIsolasi'])->name('showIsolasi');
 
+Route::get('/verifikasicovid/{id}', [DataPersonalController::class, 'verifikasiCovid'])->name('verifikasiCovid');
+Route::get('/verifikasivaksin/{id}', [DataPersonalController::class, 'verifikasiVaksin'])->name('verifikasiVaksin');
 // +---------------------------------------------------------------------------------------+ //
 //                                   <<< All Role Routes >>>
 // +---------------------------------------------------------------------------------------+ //
 
 // -> Untuk Profile
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+Route::get('/datacovidoverall', [HomeController::class, 'dataoverall'])->name('dataoverall');
 
 // Emergency / Experiment Routes
 Route::get('/chart', [HomeController::class, 'chart'])->name('chart');

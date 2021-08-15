@@ -50,6 +50,17 @@
 <!--end breadcrumb-->
 
 <!-- Donnut Chart -->
+@if(session()->get('message'))
+<div class="alert alert-info alert-dismissable text-center mt-20" role="alert">
+    <h4>{{ session()->get('message') }} </h4>
+</div>
+@endif
+
+@if(session()->get('warning'))
+<div class="alert alert-danger alert-dismissable mt-20 text-center" role="alert">
+    <h4>{{ session()->get('warning') }} </h4>
+</div>
+@endif
 
 <!-- end of Donnut Chart -->
 
@@ -99,6 +110,10 @@
                         <td>
                             <a href="{{url('/datapersonalvaksin/'.$row->id)}}" class="btn btn-sm btn-primary "><i
                                     class="lni lni-eye"></i></a>
+                            @if((Auth::user()->role ?? '') == 'admin' || (Auth::user()->role ?? '') == 'operator' )
+                                    <a href="{{url('/verifikasivaksin/'.$row->id)}}" class="btn btn-sm btn-success "><i
+                                    class="bx bx-check"></i></a>
+                                    @endif
                         </td>
                     </tr>
                     @endforeach

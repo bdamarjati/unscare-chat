@@ -107,6 +107,40 @@ class DataPersonalController extends Controller
         return view('datapersonalisolasi',compact('complete','specific','user'));
     }
 
+    public function verifikasiCovid($id)
+    {
+        return $id;
+        $user = Auth::user();
+        // $complete = UserData::where('id_user',$user->id)->get()->first();
+        // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
+        
+        ClaimCovid::where('id',$id)->update(
+                [
+                        'status_verified'=>1,
+                    ]
+                );
+
+        return redirect('admin/datapositifcovid')->with('message','Data Berhasil Di Update !');
+    }
+
+    public function verifikasiVaksin($id)
+    {
+        // return $id;
+        $user = Auth::user();
+        // $complete = UserData::where('id_user',$user->id)->get()->first();
+        // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
+        
+        ClaimVaksin::where('id',$id)->update(
+                [
+                        'status_verified'=>1,
+                    ]
+                );
+
+        return redirect('admin/datavaksin')->with('message','Data Berhasil Di Update !');
+    }
+    
+    
+
 
 
     /**

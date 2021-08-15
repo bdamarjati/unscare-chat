@@ -88,9 +88,9 @@ class ClaimVaksinController extends Controller
                 'keterangan'    => $request->keterangan,
                 'link'          => $request->link
             ]);
-            ClaimVaksinHistory::where('id_user',$user->id)->update([
-                'dosis'         => $request->dosis
-            ]);
+            // ClaimVaksinHistory::where('id_user',$user->id)->update([
+            //     'dosis'         => $request->dosis
+            // ]);
             return redirect('user/claimvaksin')->with('message','Data Sudah Di Update, Terimakasih telah melapor !!');
         }
     }

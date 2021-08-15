@@ -63,7 +63,7 @@
 
 <!-- Page Break -->
 <hr />
-<p class="mb-0 text-uppercase display-6 text-center">Data user yang positif covid-19</p>
+<p class="mb-0 text-uppercase display-6 text-center">Data Statistik Covid-19</p>
 <hr />
 <!-- end of Page Break -->
 
@@ -74,7 +74,7 @@
                 <div class="d-flex align-items-center">
                     <div>
                         <p class="mb-0 text-secondary">Total Pasien Sembuh </p>
-                        <h4 class="my-1">{{$sembuh}}</h4>
+                        <h4 class="my-1">{{$sembuhCovid}}</h4>
                         <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$34 Since last
                             week</p>
                     </div>
@@ -91,7 +91,7 @@
                 <div class="d-flex align-items-center">
                     <div>
                         <p class="mb-0 text-secondary">Total User Yang Pernah Positif</p>
-                        <h4 class="my-1">{{$pernahcovid}}</h4>
+                        <h4 class="my-1">{{$pernahCovid}}</h4>
                         <p class="mb-0 font-13 text-warning"><i class='bx bxs-up-arrow align-middle'></i>14% Since last
                             week</p>
                     </div>
@@ -108,7 +108,7 @@
                 <div class="d-flex align-items-center">
                     <div>
                         <p class="mb-0 text-secondary">Total Pasien Positif Saat Ini </p>
-                        <h4 class="my-1">{{$total}}</h4>
+                        <h4 class="my-1">{{$totalCovid}}</h4>
                         <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>12.4% Since
                             last week</p>
                     </div>
@@ -121,6 +121,7 @@
     </div>
 </div>
 <!-- DEBUG -->
+
 <!-- <div class="card">
     <div>
         <h3 id="debug">DEBUG</h3>
@@ -137,80 +138,19 @@
 </div>
 <!-- end of Stat -->
 
-<!-- Main Table -->
 <div class="card">
     <div class="card-body">
-        <div class="table-responsive">
-            <table cellspacing="5" cellpadding="5" border="0">
-                <tbody>
-                    <tr>
-                        <td>Minimum date:</td>
-                        <td><input type="text" id="min" name="min"></td>
-                    </tr>
-                    <tr>
-                        <td>Maximum date:</td>
-                        <td><input type="text" id="max" name="max"></td>
-                    </tr>
-                </tbody>
-            </table>
-            </br>
-            <table id="example2" class="table table-striped table-bordered text-center">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>NIM / NIP</th>
-                        <th>File Antigen</th>
-                        <th>File PCR</th>
-                        <th>Keterangan</th> 
-                        <!-- <th>Tanggal Terkonfirmasi</th>  -->
-                        <th>Sudah Sembuh ?</th>
-                        <th>Tanggal Terkonfirmasi</th>
-                        <th>Days till Now</th>
-                        <th>Action</th>
-                        <!-- <th>Updated at</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $no=1; $idx=0; ?>
-                    @foreach ($data as $row)
-                    <tr>
-                        <td>{{$no++}}</td>
-                        <td>{{$row->nim_nip}}</td>
-                        <td>
-                            @if(($row->gambar_hasiltest ?? '') != null)
-                            <a href="{{url('/admin/downloadcovid/'.$row->id_user)}}" class="btn btn-info"><i
-                                    class="bx bx-arrow-to-bottom"></i></a>
-                            @endif
-                        </td>
-                        <td>
-                            @if(($row->gambar_pcr ?? '') != null)
-                            <a href="{{url('/admin/downloadswabpcr/'.$row->id_user)}}" class="btn btn-info"><i
-                                    class="bx bx-arrow-to-bottom"></i></a></td>
-                        @endif
-                        <td>{{$row->keterangan}}</td>
-                        <!-- <td>{{$row->tanggal_confirmed}}</td> -->
-                        <td>{{$row->sembuh}}</td>
-                        <td>{{$row->tanggal_confirmed}}</td>
-                        <td>{{$dtn[$idx++]}}</td>
-                        <td>
-                            <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
-                                    class="lni lni-eye"></i></a>
-                            @if((Auth::user()->role ?? '') == 'admin' || (Auth::user()->role ?? '') == 'operator' )
-                            <a href="{{url('/verifikasicovid/'.$row->id)}}" class="btn btn-sm btn-success "><i
-                                    class="bx bx-check"></i></a>
-                                    @endif
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="container">
+            <div id="chart9"></div>
         </div>
     </div>
 </div>
+
+<!-- Main Table -->
 
 <!-- end of Main Table -->
 @endsection
 
 @section('CustomScripts')
-<script src="{{asset('js/datacovid.js')}}"></script>
+<script src="{{asset('js/datacovidoverall.js')}}"></script>
 @endsection

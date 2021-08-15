@@ -59,6 +59,23 @@ class HomeController extends Controller
         
         return view('profile', compact('complete','user','data'));
     }
+    public function dataoverall()
+    {
+        // return 15;
+        $user = Auth::user();
+        $Role = Auth::user()->role;
+        $Check = UserData::where('id_user',Auth::user()->id)->first();
+        $complete = UserData::where('id_user',$user->id)->get()->first();
+
+        $dataCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->get();
+        $totalCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','belum')->count();
+        $sembuhCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')->count();
+        $pernahCovid = ClaimCovidHistory::all()->count();
+
+        $dataVaksin = UserData::join('claim_vaksin','claim_vaksin.id_user','=','user_data.id_user')->get();
+
+        return view('statistikoverall', compact('complete','user','dataCovid','totalCovid','sembuhCovid','pernahCovid'));
+    }
 
     /**
      * Show the form for creating a new resource.

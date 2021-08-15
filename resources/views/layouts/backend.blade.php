@@ -110,42 +110,23 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:;" class="">
-                        <div class="parent-icon"><i class='bx bx-list-ul'></i>
-                        </div>
-                        <div class="menu-title">Data Covid UNS</div>
-                    </a>
-                    <ul>
-                        <li> <a href="{{url('/admin/dataoverall')}}"><i class="bx bx-right-arrow-alt"></i>Data Covid
-                                Overall</a>
-                        </li>
-                        <li> <a href="{{url('/admin/datapositifcovid')}}"><i class="bx bx-right-arrow-alt"></i>Data User
-                                Positif Covid</a>
-                        </li>
-                        <li> <a href="{{url('/admin/datavaksin')}}"><i class="bx bx-right-arrow-alt"></i>Data
-                                Vaksinasi</a>
-                        </li>
-                        <!-- <li> <a href="{{url('/admin/datagejala')}}"><i class="bx bx-right-arrow-alt"></i>Data User Bergejala Covid</a>
-                            </li> -->
-                        <li> <a href="{{url('/admin/dataisolasi')}}"><i class="bx bx-right-arrow-alt"></i>Data User
-                                Isolasi Mandiri</a>
-                        </li>
-                    </ul>
-                </li>
                 @endif
 
-                @if(($complete->status ?? '') == 'dokter' && ($complete->verified ?? '') == 'yes')
                 <li>
                     <a href="javascript:;" class="">
                         <div class="parent-icon"><i class='bx bx-list-ul'></i>
-                        </div>
-                        <div class="menu-title">Data Covid UNS</div>
-                    </a>
-                    <ul>
+                    </div>
+                    <div class="menu-title">Data Covid UNS</div>
+                </a>
+                <ul>
+                    <li> <a href="{{url('/datacovidoverall')}}"><i class="bx bx-right-arrow-alt"></i>Data Covid
+                                Overall</a>
+                        </li>
+                        @if(($complete->status ?? '') == 'dokter' && ($complete->verified ?? '') == 'yes'|| (Auth::user()->role ?? '') == 'admin'||(Auth::user()->role ?? '') == 'operator')
                         <li> <a href="{{url('/admin/datapositifcovid')}}"><i class="bx bx-right-arrow-alt"></i>Data User
                                 Positif Covid</a>
                         </li>
+                        
                         <li> <a href="{{url('/admin/datavaksin')}}"><i class="bx bx-right-arrow-alt"></i>Data
                                 Vaksinasi</a>
                         </li>
@@ -154,9 +135,9 @@
                         <li> <a href="{{url('/admin/dataisolasi')}}"><i class="bx bx-right-arrow-alt"></i>Data User
                                 Yang Sedang Isolasi</a>
                         </li>
+                        @endif
                     </ul>
                 </li>
-                @endif
                 <li>
                     <a href="/{{ config('chatify.routes.prefix') }}" class="">
                         <div class="parent-icon"><i class='bx bxs-chat'></i>

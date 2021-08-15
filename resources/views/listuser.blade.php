@@ -73,7 +73,8 @@
                         <th>NIM / NIP</th>
                         <th>No Telp</th>
                         <th>Alamat</th>
-                        <th>Status</th>
+                        <th>Status</th> 
+                        <th>Role</th> 
                         <th>Verivikasi Status</th>
                         <th>Action</th>
                         <!-- <th>Updated at</th> -->
@@ -90,6 +91,7 @@
                         <td>{{$row->no_telp}}</td>
                         <td>{{$row->alamat}}</td>
                         <td>{{$row->status}}</td>
+                        <td>{{$row->role}}</td>
                         <td>{{$row->verified}}</td>
                         <td class="text-center">
                             <a href="datapersonal/{{$row->id}}" class="btn btn-sm btn-warning mr-5 mb-5"><i class="bx bx-edit-alt"></i></a>
