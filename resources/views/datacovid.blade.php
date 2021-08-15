@@ -151,13 +151,14 @@
                         <th>File PCR</th>
                         <th>Keterangan</th>
                         <th>Sudah Sembuh ?</th>
-                        <th>Tanggal Lapor</th>
+                        <th>Tanggal Terkonfirmasi</th>
+                        <th>Days till Now</th>
                         <th>Action</th>
                         <!-- <th>Updated at</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no=1; ?>
+                    <?php $no=1; $idx=0; ?>
                     @foreach ($data as $row)
                     <tr>
                         <td>{{$no++}}</td>
@@ -175,7 +176,8 @@
                         @endif
                         <td>{{$row->keterangan}}</td>
                         <td>{{$row->sembuh}}</td>
-                        <td>{{$row->created_at}}</td>
+                        <td>{{$row->tanggal_confirmed}}</td>
+                        <td>{{$dtn[$idx++]}}</td>
                         <td>
                             <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
                                     class="lni lni-eye"></i></a>

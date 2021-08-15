@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Auth;
 use App\Models\UserData;
 use App\Models\ClaimCovid;
@@ -33,8 +34,22 @@ class DataCovidController extends Controller
         $total = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','belum')->count();
         $sembuh = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')->count();
         $pernahcovid = ClaimCovidHistory::all()->count();
+        
+        $dtn = new Collection();
+        for($i=0;$i<count($data);$i++){
+            if($data[$i]['tanggal_confirmed'] != null){
+                $date1 = date_create($data[$i]['tanggal_confirmed']);
+                $date2 = date_create(now());
+                $diff = date_diff($date1,$date2)->format("%R%a days");
+                $dtn->push($diff);
+            }
+            else{
+                $dtn->push("No Data");
+            }
+        }
+        // return $dtn;
         // return view('tabel',compact('user','complete','data'));
-        return view('datacovid',compact('user','complete','data','total','pernahcovid','sembuh'));
+        return view('datacovid',compact('user','complete','data','total','pernahcovid','sembuh', 'dtn'));
 
     }
 
