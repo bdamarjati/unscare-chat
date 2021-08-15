@@ -9,6 +9,11 @@ use App\Imports\CovidImport;
 use App\Http\Controllers\Controller;
 use Session;
 
+use App\Models\UserData;
+use App\Models\User;
+// use App\Models\ClaimCovid;
+use App\Models\ClaimCovidHistory;
+
 class ImportController extends Controller
 {
     //
@@ -30,6 +35,14 @@ class ImportController extends Controller
  
 		// import data
 		Excel::import(new CovidImport, public_path('/file_covid/'.$nama_file));
+
+		// $duplicates = DB::table('claim_covid_history')
+		// 	->select('nim_nip', DB::raw('COUNT(*) as `count`'))
+		// 	->groupBy('nim_nip')
+		// 	->havingRaw('COUNT(*) > 1')
+		// 	->get();
+		
+		// 	return $duplicates;
  
 		// notifikasi dengan session
 		Session::flash('sukses','Data Covid Berhasil Diimport!');

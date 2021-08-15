@@ -137,7 +137,7 @@
         </a>
     </div>
     <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-        <a href="#" class="col">
+        <a href="{{url('/datacovidoverall')}}" class="col">
             <div class="card radius-10">
                 <div class="card-body">
                     <div class="d-flex align-items-center">

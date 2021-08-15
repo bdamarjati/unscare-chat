@@ -98,7 +98,7 @@
                             <td class="text-center">
                                 <a href="datapersonal/{{$row->id}}" class="btn btn-sm btn-warning mr-5 mb-5"><i
                                         class="bx bx-edit-alt"></i></a>
-                                <a href="" class="btn btn-sm btn-danger mr-5 mb-5"><i class="bx bx-eraser"></i></a>
+                                <a href="deletepersonal/{{$row->id}}" class="btn btn-sm btn-danger mr-5 mb-5"><i class="bx bx-eraser"></i></a>
                             </td>
                         </tr>
                         @endforeach

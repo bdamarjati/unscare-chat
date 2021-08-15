@@ -115,18 +115,21 @@
                 <li>
                     <a href="javascript:;" class="">
                         <div class="parent-icon"><i class='bx bx-list-ul'></i>
-                    </div>
-                    <div class="menu-title">Data Covid UNS</div>
-                </a>
-                <ul>
-                    <li> <a href="{{url('/datacovidoverall')}}"><i class="bx bx-right-arrow-alt"></i>Data Covid
+                        </div>
+                        <div class="menu-title">Data Covid UNS</div>
+                    </a>
+                    <ul>
+                        <li> <a href="{{url('/datacovidoverall')}}"><i class="bx bx-right-arrow-alt"></i>Data Covid
                                 Overall</a>
                         </li>
-                        @if(($complete->status ?? '') == 'dokter' && ($complete->verified ?? '') == 'yes'|| (Auth::user()->role ?? '') == 'admin'||(Auth::user()->role ?? '') == 'operator')
+                        @if(($complete->status ?? '') == 'dokter' && ($complete->verified ?? '') == 'yes'||
+                        (Auth::user()->role ?? '') == 'admin'||(Auth::user()->role ?? '') == 'operator' ||
+                        ($complete->status ?? '') == 'koas dokter' && ($complete->verified ?? '') == 'yes' ||
+                        ($complete->status ?? '') == 'tenaga medis' && ($complete->verified ?? '') == 'yes')
                         <li> <a href="{{url('/admin/datapositifcovid')}}"><i class="bx bx-right-arrow-alt"></i>Data User
                                 Positif Covid</a>
                         </li>
-                        
+
                         <li> <a href="{{url('/admin/datavaksin')}}"><i class="bx bx-right-arrow-alt"></i>Data
                                 Vaksinasi</a>
                         </li>
@@ -361,8 +364,12 @@
     <script src="{{asset('CostumStyle/js/app.js')}}"></script>
 
     <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
     <!-- <script src="{{asset('CostumStyle/plugins/apexcharts-bundle/js/apex-custom.js')}}"></script> -->
     @yield('CustomScripts')
     <!-- <script src="{{asset('CostumStyle/js/index.js')}}"></script> -->

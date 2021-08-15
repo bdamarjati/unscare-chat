@@ -108,9 +108,9 @@ Route::patch('/user/isolasimandiri/{id}', [IsolasiController::class, 'update'])-
 
 // -> Untuk Data Administtasi User
 Route::get('/admin/useradministration', [AdministrationController::class, 'index']);
-Route::get('admin/datapersonal/{id}', [DataPersonalController::class, 'show'])->name('show');
-Route::patch('admin/datapersonal/{id}', [DataPersonalController::class, 'update'])->name('update');
-// Route::get('/admin/updaterole/{id}', [AdministrationController::class, 'updaterole']->name('updatedrole'));
+Route::get('/admin/deletepersonal/{id}', [AdministrationController::class, 'deletePersonal'])->name('deletePersonal');
+Route::get('/admin/datapersonal/{id}', [DataPersonalController::class, 'show'])->name('show');
+Route::patch('/admin/datapersonal/{id}', [DataPersonalController::class, 'update'])->name('update');
 Route::get('/admin/updaterole/{id}', [AdministrationController::class, 'updaterole'])->name('updatedrole');
 
 // -> Untuk Data Covid
@@ -136,12 +136,19 @@ Route::get('/admin/dataisolasiterpusat', [DataIsolasiController::class, 'isomanT
 
 // -> Untuk Check Data Pasien
 Route::get('/datapersonalcovid/{id}', [DataPersonalController::class, 'showCovid'])->name('showCovid');
+
 Route::get('/datapersonalvaksin/{id}', [DataPersonalController::class, 'showVaksin'])->name('showVaksin');
+
 Route::get('/datapersonalgejala/{id}', [DataPersonalController::class, 'showGejala'])->name('showGejala');
 Route::get('/datapersonalisolasi/{id}', [DataPersonalController::class, 'showIsolasi'])->name('showIsolasi');
 
 Route::get('/verifikasicovid/{id}', [DataPersonalController::class, 'verifikasiCovid'])->name('verifikasiCovid');
 Route::get('/verifikasivaksin/{id}', [DataPersonalController::class, 'verifikasiVaksin'])->name('verifikasiVaksin');
+
+Route::get('/deletevaksin/{id}', [DataPersonalController::class, 'deleteVaksin'])->name('deleteVaksin');
+Route::get('/deletecovid/{id}', [DataPersonalController::class, 'deleteCovid'])->name('deleteCovid');
+
+
 // +---------------------------------------------------------------------------------------+ //
 //                                   <<< All Role Routes >>>
 // +---------------------------------------------------------------------------------------+ //

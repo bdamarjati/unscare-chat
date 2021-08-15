@@ -141,7 +141,7 @@
                     <div class="col-sm-9 text-secondary">
                         <!-- <input type="submit" class="btn btn-success px-4" value="Import Data" /> -->
                         <button type="button" class="btn btn-success mr-5" data-toggle="modal" data-target="#importCovid">
-                            IMPORT DATA
+                            Import Data
                         </button>
                     </div>
                 </div>
@@ -199,11 +199,14 @@
                             <td>{{$dtn[$idx++]}}</td>
                             <td>
                                 <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
-                                        class="lni lni-eye"></i></a>
+                                        class="lni lni-eye" data-toggle="tooltip" title="Lihat Data"></i></a>
                                 @if((Auth::user()->role ?? '') == 'admin' || (Auth::user()->role ?? '') ==
                                 'operator' )
-                                <a href="{{url('/verifikasicovid/'.$row->id)}}" class="btn btn-sm btn-success "><i
+                                <a href="{{url('/verifikasicovid/'.$row->id)}}" class="btn btn-sm btn-success"
+                                data-toggle="tooltip" title="Verifikasi Data"><i
                                         class="bx bx-check"></i></a>
+                                <a href="{{url('/deletecovid/'.$row->id)}}" class="btn btn-sm btn-danger "><i
+                                        class="bx bx-eraser" data-toggle="tooltip" title="Hapus Data"></i></a>
                                 @endif
                             </td>
                         </tr>

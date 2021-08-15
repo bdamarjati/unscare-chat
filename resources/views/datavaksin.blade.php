@@ -111,10 +111,12 @@
                             <td>{{$row->created_at}}</td>
                             <td>
                                 <a href="{{url('/datapersonalvaksin/'.$row->id)}}" class="btn btn-sm btn-primary "><i
-                                        class="lni lni-eye"></i></a>
+                                        class="lni lni-eye" data-toggle="tooltip" title="Lihat Data"></i></a>
                                 @if((Auth::user()->role ?? '') == 'admin' || (Auth::user()->role ?? '') == 'operator' )
                                         <a href="{{url('/verifikasivaksin/'.$row->id)}}" class="btn btn-sm btn-success "><i
-                                        class="bx bx-check"></i></a>
+                                        class="bx bx-check" data-toggle="tooltip" title="Verifikasi Data"></i></a>
+                                        <a href="{{url('/deletevaksin/'.$row->id)}}" class="btn btn-sm btn-danger "><i
+                                        class="bx bx-eraser" data-toggle="tooltip" title="Hapus Data"></i></a>
                                         @endif
                             </td>
                         </tr>

@@ -34,9 +34,13 @@
                                         <label class="form-label">Status :</label>
                                         <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="option" required id="option">
                                             <!-- <option selected>Open this select menu</option> -->
-                                                <option value="dokter">dokter</option>
-                                                <option value="tenaga medis">tenaga medis</option>
-                                                <option value="biasa">biasa</option>
+                                                <option value="dokter"      >dokter                 </option>
+                                                <option value="koas dokter" >koas dokter            </option>
+                                                <option value="tenaga medis">tenaga medis           </option>
+                                                <option value="mahasiswa"   >mahasiswa              </option>
+                                                <option value="umum"        >umum                   </option>
+                                                <option value="dosen"       >dosen / tenaga pendidik</option>
+                                                <option value="karyawan"    >karyawan               </option>
                                         </select>
                                     </div>
 									<div class="mb-3">

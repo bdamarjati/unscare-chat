@@ -143,7 +143,7 @@ class ClaimController extends Controller
         // $hasiltest->move($hasil_upload,$nama_gambar);
         // $hasilpcr->move($hasil_upload,$nama_pcr);
         
-        $check = ClaimCovid::where('id_user',$user->id)->get()->first();
+        
         ClaimCovid::create( 
             ['id_user'         => $complete->id_user,
             'gambar_hasiltest' => $nama_gambar, 
@@ -153,13 +153,7 @@ class ClaimController extends Controller
             'sembuh'           => 'belum'
         ]);
         
-        if($check == null){
-            ClaimCovidHistory::create( 
-                ['id_user'         => $complete->id_user,
-                'sembuh'           => 'belum'
-            ]);
-            return redirect('user/claimcovid')->with('message','Anda saat ini terinfeksi Covid-19, Segera lakukan isolasi mandiri atau Hubungi pihak yang berwenang !');
-        }
+        
         return redirect('user/claimcovid')->with('message','Anda saat ini terinfeksi Covid-19, Segera lakukan isolasi mandiri atau Hubungi pihak yang berwenang !');
     }
 

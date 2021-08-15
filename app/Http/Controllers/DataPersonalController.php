@@ -7,6 +7,7 @@ use Auth;
 
 use App\Models\UserData;
 use App\Models\ClaimCovid;
+use App\Models\ClaimCovidHistory;
 use App\Models\ClaimVaksin;
 use App\Models\ClaimGejala;
 
@@ -75,10 +76,19 @@ class DataPersonalController extends Controller
     public function showCovid($id)
     {
         $user = Auth::user();
+        $check = ClaimCovid::where('id',$id)->get()->first();
+        $nim_nip = $check->nim_nip;
+        // return $check;
+        // return $nim_nip;
+
         $complete = UserData::where('id_user',$user->id)->get()->first();
-        $specific = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.id',$id)->get()->first();
+        // $specific = UserData::join('claim_covid','claim_covid.nim_nip','=','user_data.nim_nip')
+        // ->where('claim_covid.nim_nip',$nim_nip)->get()->first();
+        $specific = UserData::where('nim_nip',$nim_nip)->get()->first();
+
+        // return $specific;
         
-        return view('datapersonalcovid',compact('complete','specific','user'));
+        return view('datapersonalcovid',compact('complete','specific','user','check'));
     }
 
     public function showVaksin($id)
@@ -109,16 +119,29 @@ class DataPersonalController extends Controller
 
     public function verifikasiCovid($id)
     {
-        return $id;
+        // return $id;
         $user = Auth::user();
-        // $complete = UserData::where('id_user',$user->id)->get()->first();
+        $complete = UserData::where('id_user',$user->id)->get()->first();
         // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
-        
+        $specific = ClaimCovid::where('id',$id)->get()->first();
+        $check = ClaimCovid::where('id',$id)->get()->pluck('nim_nip');
+        // return $check;
+        // $nim_nip = $check->nim_nip;
+        $duplicate = ClaimCovid::where('nim_nip',$check)->count();
+        // return $duplicate;
+        // return $nim_nip;
         ClaimCovid::where('id',$id)->update(
                 [
                         'status_verified'=>1,
                     ]
                 );
+        if($duplicate == 1){
+            ClaimCovidHistory::updateOrCreate( 
+                ['nim_nip'         => $specific->nim_nip],
+                ['sembuh'           => 'belum'
+            ]);
+            return redirect('admin/datapositifcovid')->with('message','Data Berhasil Di Update !');
+        }
 
         return redirect('admin/datapositifcovid')->with('message','Data Berhasil Di Update !');
     }
@@ -137,6 +160,30 @@ class DataPersonalController extends Controller
                 );
 
         return redirect('admin/datavaksin')->with('message','Data Berhasil Di Update !');
+    }
+
+    public function deleteVaksin($id)
+    {
+        // return $id;
+        $user = Auth::user();
+        // $complete = UserData::where('id_user',$user->id)->get()->first();
+        // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
+        
+        ClaimVaksin::where('id',$id)->delete();
+
+        return redirect('admin/datavaksin')->with('message','Data Berhasil Di Hapus !');
+    }
+    
+    public function deleteCovid($id)
+    {
+        // return $id;
+        $user = Auth::user();
+        // $complete = UserData::where('id_user',$user->id)->get()->first();
+        // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
+        
+        ClaimCovid::where('id',$id)->delete();
+
+        return redirect('admin/datapositifcovid')->with('message','Data Berhasil Di Hapus !');
     }
     
     

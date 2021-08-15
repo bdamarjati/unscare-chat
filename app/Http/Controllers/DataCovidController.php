@@ -32,9 +32,12 @@ class DataCovidController extends Controller
         $user = Auth::user();
         $complete = UserData::where('id_user',$user->id)->get()->first();
         $role = User::where('id',$user->id)->get()->first();
-        $data = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->get();
-        $total = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','belum')->count();
-        $sembuh = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')->count();
+        // $data = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->get();
+        $data = ClaimCovid::all();
+        // $total = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','belum')->count();
+        $total = ClaimCovid::where('sembuh','belum')->count();
+        // $sembuh = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')->count();
+        $sembuh = ClaimCovid::where('sembuh','sudah')->count();
         $pernahcovid = ClaimCovidHistory::all()->count();
         
         $dtn = new Collection();

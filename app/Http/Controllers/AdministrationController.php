@@ -55,6 +55,18 @@ class AdministrationController extends Controller
         return redirect('admin/useradministration')->with('message','Data Berhasil Di Update !');
     }
 
+    public function deletePersonal($id)
+    {
+        // return $id;
+        $user = Auth::user();
+        // $complete = UserData::where('id_user',$user->id)->get()->first();
+        // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
+        
+        User::where('id',$id)->delete();
+
+        return redirect('admin/useradministration')->with('message','Data Berhasil Di Delete !');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
