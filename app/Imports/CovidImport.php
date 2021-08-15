@@ -21,7 +21,8 @@ class CovidImport implements ToModel,WithHeadingRow
             'gambar_pcr' => null,
             'keterangan' => $row['keterangan'],
             'tanggal_confirmed' => $row['tanggal'],
-            'sembuh' => null
+            'status_verified' => $row['status'],
+            'sembuh' => $row['sembuh']
         ]);
     }
 }

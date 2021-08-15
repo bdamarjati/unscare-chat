@@ -1,5 +1,6 @@
 var number = [0, 0, 0];
 var date = [0, 0, 0];
+var healthy = [0,0,0];
 
 getData();
 
@@ -8,6 +9,7 @@ function getData() {
         url: 'api/graphPositif',
         success: function (data) {
             number = data.number;
+            healthy = data.healthy;
             date = data.day;
             renderChart();
         }
@@ -20,6 +22,9 @@ function renderChart() {
         series: [{
             name: 'Total Case',
             data: number
+        },{
+            name: 'Recovered',
+            data: healthy
         }],
         chart: {
             foreColor: '#9ba7b2',
@@ -32,7 +37,7 @@ function renderChart() {
                 show: true
             },
         },
-        colors: ["#0d6efd", '#f41127'],
+        colors: ['#f41127', "#0d6efd"],
         title: {
             text: '',
             align: 'left',
