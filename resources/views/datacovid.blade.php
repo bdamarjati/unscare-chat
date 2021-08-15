@@ -149,7 +149,8 @@
                         <th>NIM / NIP</th>
                         <th>File Antigen</th>
                         <th>File PCR</th>
-                        <th>Keterangan</th>
+                        <th>Keterangan</th> 
+                        <th>Tanggal Terkonfirmasi</th> 
                         <th>Sudah Sembuh ?</th>
                         <th>Tanggal Terkonfirmasi</th>
                         <th>Days till Now</th>
@@ -175,6 +176,7 @@
                                     class="bx bx-arrow-to-bottom"></i></a></td>
                         @endif
                         <td>{{$row->keterangan}}</td>
+                        <td>{{$row->tanggal_confirmed}}</td>
                         <td>{{$row->sembuh}}</td>
                         <td>{{$row->tanggal_confirmed}}</td>
                         <td>{{$dtn[$idx++]}}</td>

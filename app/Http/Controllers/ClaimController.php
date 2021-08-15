@@ -148,7 +148,8 @@ class ClaimController extends Controller
             ['id_user'         => $complete->id_user,
             'gambar_hasiltest' => $nama_gambar, 
             'gambar_pcr'       => $nama_pcr, 
-            'keterangan'       => $request->keterangan,
+            'keterangan'       => strtoupper($request->keterangan),
+            'tanggal_confirmed'=>$request->tanggal_confirmed,
             'sembuh'           => 'belum'
         ]);
         
