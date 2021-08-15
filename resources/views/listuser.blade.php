@@ -45,24 +45,24 @@
         </div>
     </div>
     <!--end breadcrumb-->
-    
+
     @if(session()->get('message'))
     <div class="alert alert-info alert-dismissable mt-20 text-center" role="alert">
         <h4>{{ session()->get('message') }} </h4>
     </div>
     @endif
-    
+
     @if(session()->get('warning'))
     <div class="alert alert-danger alert-dismissable mt-20 text-center" role="alert">
         <h4>{{ session()->get('warning') }} </h4>
     </div>
     @endif
-    
-    
-    
+
+
+
     <p class="mb-0 text-uppercase display-6 text-center">List User UNS Care</p>
     <hr />
-    
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
@@ -75,10 +75,10 @@
                             <th>NIM / NIP</th>
                             <th>No Telp</th>
                             <th>Alamat</th>
-                            <th>Status</th> 
-                            <th>Role</th> 
+                            <th>Status</th>
+                            <th>Role</th>
                             <th>Verivikasi Status</th>
-                            <th>Action</th>
+                            <th style="width:10%">Action</th>
                             <!-- <th>Updated at</th> -->
                         </tr>
                     </thead>
@@ -96,16 +96,17 @@
                             <td>{{$row->role}}</td>
                             <td>{{$row->verified}}</td>
                             <td class="text-center">
-                                <a href="datapersonal/{{$row->id}}" class="btn btn-sm btn-warning mr-5 mb-5"><i class="bx bx-edit-alt"></i></a>
+                                <a href="datapersonal/{{$row->id}}" class="btn btn-sm btn-warning mr-5 mb-5"><i
+                                        class="bx bx-edit-alt"></i></a>
                                 <a href="" class="btn btn-sm btn-danger mr-5 mb-5"><i class="bx bx-eraser"></i></a>
                             </td>
                         </tr>
                         @endforeach
-    
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    @endsection
 </div>
+@endsection

@@ -31,7 +31,7 @@
                 </ol>
             </nav>
         </div>
-    
+
         <div class="ms-auto">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Settings</button>
@@ -50,25 +50,25 @@
         </div>
     </div>
     <!--end of breadcrumb-->
-    
+
     @if(session()->get('message'))
     <div class="alert alert-info alert-dismissable text-center mt-20" role="alert">
         <h4>{{ session()->get('message') }} </h4>
     </div>
     @endif
-    
+
     @if(session()->get('warning'))
     <div class="alert alert-danger alert-dismissable mt-20 text-center" role="alert">
         <h4>{{ session()->get('warning') }} </h4>
     </div>
     @endif
-    
+
     <!-- Page Break -->
     <hr />
     <p class="mb-0 text-uppercase display-6 text-center">Data Statistik Covid-19</p>
     <hr />
     <!-- end of Page Break -->
-    
+
     <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
         <div class="col">
             <div class="card radius-10">
@@ -77,7 +77,8 @@
                         <div>
                             <p class="mb-0 text-secondary">Total Pasien Sembuh </p>
                             <h4 class="my-1">{{$sembuhCovid}}</h4>
-                            <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$34 Since last
+                            <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$34 Since
+                                last
                                 week</p>
                         </div>
                         <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bxs-capsule'></i>
@@ -94,7 +95,8 @@
                         <div>
                             <p class="mb-0 text-secondary">Total User Yang Pernah Positif</p>
                             <h4 class="my-1">{{$pernahCovid}}</h4>
-                            <p class="mb-0 font-13 text-warning"><i class='bx bxs-up-arrow align-middle'></i>14% Since last
+                            <p class="mb-0 font-13 text-warning"><i class='bx bxs-up-arrow align-middle'></i>14% Since
+                                last
                                 week</p>
                         </div>
                         <div class="widgets-icons bg-light-warning text-warning ms-auto"><i class='bx bxs-group'></i>
@@ -111,7 +113,8 @@
                         <div>
                             <p class="mb-0 text-secondary">Total Pasien Positif Saat Ini </p>
                             <h4 class="my-1">{{$totalCovid}}</h4>
-                            <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>12.4% Since
+                            <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>12.4%
+                                Since
                                 last week</p>
                         </div>
                         <div class="widgets-icons bg-light-danger text-danger ms-auto"><i class='bx bxs-virus'></i>
@@ -123,13 +126,13 @@
         </div>
     </div>
     <!-- DEBUG -->
-    
+
     <!-- <div class="card">
         <div>
             <h3 id="debug">DEBUG</h3>
         </div>
     </div> -->
-    
+
     <!-- Stat -->
     <div class="card">
         <div class="card-body">
@@ -139,7 +142,7 @@
         </div>
     </div>
     <!-- end of Stat -->
-    
+
     <div class="card">
         <div class="card-body">
             <div class="container">
@@ -147,12 +150,12 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Main Table -->
-    
+
     <!-- end of Main Table -->
-    @endsection
 </div>
+@endsection
 
 @section('CustomScripts')
 <script src="{{asset('js/datacovidoverall.js')}}"></script>
