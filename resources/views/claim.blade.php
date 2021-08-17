@@ -16,7 +16,7 @@
 
 @section('content')
 
-<!-- <div class="container"> -->
+<div class="container">
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -98,7 +98,7 @@
                     @if($data ?? '' != null)
                     <!-- <form method="post" action="/user/claimvaksin/{{$user->id}}" enctype="multipart/form-data" > -->
                     <div class="table-responsive">
-                        <table id="example2" class="table table-striped table-bordered text-center">
+                        <table id="cilik" class="table table-striped table-bordered text-center">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -106,7 +106,7 @@
                                     <th>Keterangan</th>
                                     <th>Sudah Sembuh ?</th>
                                     <th>Tanggal Lapor</th>
-                                    <!-- <th>Action</th> -->
+                                    <th>Status Isolasi</th>
                                     <!-- <th>Updated at</th> -->
                                 </tr>
                             </thead>
@@ -119,6 +119,7 @@
                                     <td>{{$row->keterangan}}</td>
                                     <td>{{$row->sembuh}}</td>
                                     <!-- <td></td> -->
+                                    <td>{{$row->created_at}}</td>
                                     <td>{{$row->created_at}}</td>
                                 </tr>
                                 @endforeach
@@ -230,7 +231,7 @@
                                     <label class="form-label" id="isomansendirilabel" style="display:none">Tinggal Sendirian
                                         ? :</label>
                                     <input class="form-control" list="datalistOptions" id="isomansendiri" placeholder="ya"
-                                        name="sendirian?" style="display:none">
+                                        name="sendirian" style="display:none">
                                     <datalist id="datalistOptions">
                                         <option value="Ya, Saya tinggal sendirian">
                                         <option value="Tidak, Ada teman/orang lain yang tinggal di tempat yang sama">
@@ -339,7 +340,7 @@
             </div>
         </div>
     </div>
-<!-- </div> -->
+</div>
 
 <script>
     function myFunction() {

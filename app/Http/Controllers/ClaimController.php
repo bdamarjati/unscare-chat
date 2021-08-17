@@ -76,46 +76,9 @@ class ClaimController extends Controller
             return redirect('user/claimcovid')->with('warning','Maaf, tolong data di isi lengkap !');
         }
 
-        if($pilih == 'milih_covid'){
-            if($request->keterangan==null || $request->alamat==null || $request->url==null){
-                return redirect('user/claimcovid')->with('warning','Maaf, tolong data di isi lengkap !');
-            }else{
-                ClaimIsolasi::create( 
-                ['id_user'          => $complete->id_user,
-                'alasan'            => 'covid', 
-                'alamat'            => $request->alamat,
-                'url_map'           => $request->url,
-                'kiriman_bantuan'   => 'belum',
-                'selesai'           => 'belum'
-           ]);    
-            }
-        }
-        if($pilih == 'milih_rumahsehat'){
-            if($request->rumahsehat==null){
-                return redirect('user/claimcovid')->with('warning','Maaf, tolong data di isi lengkap !');
-            }else{
-                ClaimIsolasiTerpusat::create( 
-                ['id_user'          => $complete->id_user,
-                'rumah_sehat'       => $request->rumahsehat,
-                'selesai'           => 'belum'
-           ]);    
-            }
-        }
-        if($pilih == 'milih_rslain'){
-            if($request->nama_tempat==null || $request->alamat_tempat==null || $request->url_tempat==null){
-                return redirect('user/claimcovid')->with('warning','Maaf, tolong data di isi lengkap !');
-            }else{
-                ClaimIsolasiRSLainnya::create( 
-                ['id_user'          => $complete->id_user,
-                'nama_tempat'       => $request->nama_tempat,
-                'alamat_tempat'     => $request->alamat_tempat,
-                'url_tempat'        => $request->url_tempat,
-                'selesai'           => 'belum'
-                ]);   
-            }
-        }
         
-        // return $pilih;
+        
+        // return $variable_kosong;
 
 
         $hasiltest = $request->file('file_hasil');
@@ -139,19 +102,99 @@ class ClaimController extends Controller
 
             $hasiltest->move($hasil_upload,$nama_gambar);
             $hasilpcr->move($hasil_upload,$nama_pcr);
-        }        
-        // $hasiltest->move($hasil_upload,$nama_gambar);
-        // $hasilpcr->move($hasil_upload,$nama_pcr);
+        }   
+
+
+
+        if($pilih == 'milih_covid'){
+            $variable_kosong = 1;
+            if($request->keterangan==null || $request->alamat==null || $request->url==null){
+                return redirect('user/claimcovid')->with('warning','Maaf, tolong data di isi lengkap !');
+            }else{
+
+                $x = ClaimCovid::create( 
+                    ['id_user'         => $complete->id_user,
+                    'gambar_hasiltest' => $nama_gambar, 
+                    'gambar_pcr'       => $nama_pcr, 
+                    'keterangan'       => ($request->keterangan),
+                    'tanggal_confirmed'=> $request->tanggal_confirmed,
+                    'sembuh'           => 'belum',
+                    'pilihan_isolasi'  => $variable_kosong
+                    ,'nim_nip'         => $complete->nim_nip
+                ]);
+
+                ClaimIsolasi::create( 
+                [
+                'id_covid'          => $x->id,
+                'alasan'            => $request->sendirian, 
+                'alamat'            => $request->alamat,
+                'url_map'           => $request->url,
+                'kiriman_bantuan'   => 'belum',
+                'selesai'           => 'belum'
+           ]);    
+            }
+        }
+
+        if($pilih == 'milih_rumahsehat'){
+            if($request->rumahsehat=='RS1'){
+                $variable_kosong = 2;
+            }elseif($request->rumahsehat=='RS2'){
+                $variable_kosong = 3;
+            }
+            if($request->rumahsehat==null){
+                return redirect('user/claimcovid')->with('warning','Maaf, tolong data di isi lengkap !');
+            }else{
+                $x = ClaimCovid::create( 
+                    ['id_user'         => $complete->id_user,
+                    'gambar_hasiltest' => $nama_gambar, 
+                    'gambar_pcr'       => $nama_pcr, 
+                    'keterangan'       => ($request->keterangan),
+                    'tanggal_confirmed'=> $request->tanggal_confirmed,
+                    'sembuh'           => 'belum',
+                    'pilihan_isolasi'  => $variable_kosong
+                    ,'nim_nip'         => $complete->nim_nip
+
+                ]);
+
+                ClaimIsolasiTerpusat::create( 
+                [
+                    'id_covid'          => $x->id,
+                'rumah_sehat'       => $request->rumahsehat,
+                'selesai'           => 'belum'
+           ]);    
+            }
+            
+        }
         
+        if($pilih == 'milih_rslain'){
+            $variable_kosong = 4;
+            if($request->nama_tempat==null || $request->alamat_tempat==null || $request->url_tempat==null){
+                return redirect('user/claimcovid')->with('warning','Maaf, tolong data di isi lengkap !');
+            }else{
+                 $x = ClaimCovid::create( 
+                    ['id_user'         => $complete->id_user,
+                    'gambar_hasiltest' => $nama_gambar, 
+                    'gambar_pcr'       => $nama_pcr, 
+                    'keterangan'       => ($request->keterangan),
+                    'tanggal_confirmed'=> $request->tanggal_confirmed,
+                    'sembuh'           => 'belum',
+                    'pilihan_isolasi'  => $variable_kosong
+                    ,'nim_nip'         => $complete->nim_nip
+
+                ]);
+
+                ClaimIsolasiRSLainnya::create( 
+                [
+                    'id_covid'          => $x->id,
+                'nama_tempat'       => $request->nama_tempat,
+                'alamat_tempat'     => $request->alamat_tempat,
+                'url_tempat'        => $request->url_tempat,
+                'selesai'           => 'belum'
+                ]);   
+            }
+        }
         
-        ClaimCovid::create( 
-            ['id_user'         => $complete->id_user,
-            'gambar_hasiltest' => $nama_gambar, 
-            'gambar_pcr'       => $nama_pcr, 
-            'keterangan'       => ($request->keterangan),
-            'tanggal_confirmed'=>$request->tanggal_confirmed,
-            'sembuh'           => 'belum'
-        ]);
+        // return $x->id;
         
         
         return redirect('user/claimcovid')->with('message','Anda saat ini terinfeksi Covid-19, Segera lakukan isolasi mandiri atau Hubungi pihak yang berwenang !');
@@ -192,6 +235,12 @@ class ClaimController extends Controller
         // return $id;
         $user = Auth::user();
         $complete = ClaimCovid::where('id_user',$user->id)->get()->first();
+
+        $check = ClaimCovid::where('id',$id)->get()->last();
+        $nim_nip = $check->nim_nip;
+        $specific = $check->id;
+
+        // return $check;
         
         ClaimCovid::where('id',$id)->update(
                 [
@@ -200,25 +249,25 @@ class ClaimController extends Controller
                     ]
                 );
 
-        ClaimCovidHistory::where('id_user',$user->id)->update(
+        ClaimCovidHistory::where('nim_nip',$nim_nip)->update(
                 [
                         'sembuh'=>'sudah'
                     ]
                 );
 
-        ClaimIsolasi::where('id_user',$user->id)->update(
+        ClaimIsolasi::where('id_covid',$specific)->update(
                 [
                         'selesai'=>'sudah'
                     ]
                 );
 
-        ClaimIsolasiRSLainnya::where('id_user',$user->id)->update(
+        ClaimIsolasiRSLainnya::where('id_covid',$specific)->update(
                 [
                         'selesai'=>'sudah'
                     ]
                 );
 
-        ClaimIsolasiTerpusat::where('id_user',$user->id)->update(
+        ClaimIsolasiTerpusat::where('id_covid',$specific)->update(
                 [
                         'selesai'=>'sudah'
                     ]

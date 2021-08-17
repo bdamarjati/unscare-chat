@@ -9,6 +9,8 @@ use App\Models\UserData;
 use App\Models\ClaimCovid;
 use App\Models\ClaimVaksin;
 use App\Models\ClaimIsolasi;
+use App\Models\ClaimIsolasiTerpusat;
+use App\Models\ClaimIsolasiRSLainnya;
 
 class DataIsolasiController extends Controller
 {
@@ -31,10 +33,18 @@ class DataIsolasiController extends Controller
     {
         $user = Auth::user();
         $complete = UserData::where('id_user',$user->id)->get()->first();
-        $data = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->get();
+        // $data = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->get();
+        $data = ClaimIsolasi::all();
+        $dataTerpusat = ClaimIsolasiTerpusat::all();
+        $dataLainnya = ClaimIsolasiRSLainnya::all();
+
+        $totalMandiri = ClaimIsolasi::where('selesai','belum')->count();
+        $totalTerpusat = ClaimIsolasiTerpusat::where('selesai','belum')->count();
+        $totalLainnya = ClaimIsolasiRSLainnya::where('selesai','belum')->count();
 
         // return $data;
-        return view('dataisolasi',compact('user','complete','data'));
+        return view('dataisolasi',compact('dataTerpusat','user','complete','data',
+        'dataLainnya','totalLainnya','totalMandiri','totalTerpusat',));
     }
 
     public function isomanTerpusat()

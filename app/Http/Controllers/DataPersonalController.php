@@ -10,6 +10,7 @@ use App\Models\ClaimCovid;
 use App\Models\ClaimCovidHistory;
 use App\Models\ClaimVaksin;
 use App\Models\ClaimGejala;
+use App\Models\ClaimIsolasi;
 
 class DataPersonalController extends Controller
 {
@@ -100,6 +101,7 @@ class DataPersonalController extends Controller
 
         return view('datapersonalvaksin',compact('complete','specific','user'));
     }
+    
     public function showGejala($id)
     {
         $user = Auth::user();
@@ -108,9 +110,11 @@ class DataPersonalController extends Controller
 
         return view('datapersonalgejala',compact('complete','specific','user'));
     }
+
     public function showIsolasi($id)
     {
         $user = Auth::user();
+        $check = ClaimIsolasi::where('id',$id)->get()->first();
         $complete = UserData::where('id_user',$user->id)->get()->first();
         $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
 

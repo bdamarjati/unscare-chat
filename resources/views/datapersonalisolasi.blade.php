@@ -56,13 +56,17 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-center"><i class="bx bxs-user-circle text-primary font-50"></i>
+                        @if(($specific ?? '' != null))
                         <h4 class="form-label ">Suspect : {{$specific->nama_lengkap}}</h4>
+                        @else
+                        <h4 class="form-label ">Suspect : belum ada data user</h4>
+                        @endif
                         <!-- <p>Silahkan Isi Data ID dan Password Anda<a href="authentication-signup.html"></a> -->
                     </div>
                     <div class="login-separater text-center mb-4">
                         <hr />
                     </div>
-
+                    @if(($specific ?? '' != null))
                     <div class="mb-3">
                         <label class="form-label">Nama Lengkap :</label>
                         <input type="text" class="form-control" value="{{$specific->nama_lengkap}}" name="nama_lengkap"
@@ -116,6 +120,37 @@
                     </div>
                     @endif
                     <br>
+                    @else
+                     <div class="mb-3">
+                        <label class="form-label">Nama Lengkap :</label>
+                        <input type="text" class="form-control" value="" name="nama_lengkap" id="nama_lengkap" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">NIM / NIP :</label>
+                        <input type="text" class="form-control" value="{{$check->nim_nip}}" name="nim_nip" id="nim_nip"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Keterangan :</label>
+                        <input type="text" class="form-control" value="{{$check->keterangan}}" name="nim_nip"
+                            id="nim_nip" readonly>
+                    </div>
+                    <!-- <div class="mb-3">
+							<label class="form-label">Tanggal Lapor Terkena Covid (Ke Aplikasi UNS Care) :</label>
+							<input type="text" class="form-control" value="" name="nim_nip"
+								id="nim_nip" readonly>
+						</div> -->
+                    <!-- <div class="mb-3">
+							<label class="form-label">Gambar Hasil Test Covid :</label><br>
+							<img src="" alt=""
+								style="width:350px;height:300px;">
+						</div> -->
+                    <div class="mb-3">
+                        <label class="form-label">Sekarang Sudah Selesai ? :</label>
+                        <input type="text" class="form-control" value="{{$check->selesai}}" name="nim_nip" id="nim_nip"
+                            readonly>
+                    </div>
+                    @endif
 
                 </div>
             </div>

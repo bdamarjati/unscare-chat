@@ -137,6 +137,8 @@
     <div class="card">
         <div class="card-body">
             <div class="container">
+                <h6 class="mb-0 text-uppercase">Grafik Covid</h6>
+            <hr />
                 <div id="chart3"></div>
             </div>
         </div>
@@ -146,6 +148,8 @@
     <div class="card">
         <div class="card-body">
             <div class="container">
+                <h6 class="mb-0 text-uppercase">Grafik Vaksin</h6>
+            <hr />
                 <div id="chart9"></div>
             </div>
         </div>

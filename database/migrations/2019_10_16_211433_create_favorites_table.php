@@ -13,14 +13,14 @@ class CreateFavoritesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ch_favorites', function (Blueprint $table) {
-            $table->bigInteger('id');
-            $table->bigInteger('user_id');
-            $table->bigInteger('favorite_id');
-            $table->timestamps();
+        // Schema::create('ch_favorites', function (Blueprint $table) {
+        //     $table->bigInteger('id');
+        //     $table->bigInteger('user_id');
+        //     $table->bigInteger('favorite_id');
+        //     $table->timestamps();
 
-            $table->primary('id');
-        });
+        //     $table->primary('id');
+        // });
     }
 
     /**
@@ -28,8 +28,8 @@ class CreateFavoritesTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('favorites');
-    }
+    // public function down()
+    // {
+    //     Schema::dropIfExists('favorites');
+    // }
 }

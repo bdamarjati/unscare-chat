@@ -13,18 +13,18 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ch_messages', function (Blueprint $table) {
-            $table->bigInteger('id');
-            $table->string('type');
-            $table->bigInteger('from_id');
-            $table->bigInteger('to_id');
-            $table->string('body',5000)->nullable();
-            $table->string('attachment')->nullable();
-            $table->boolean('seen')->default(false);
-            $table->timestamps();
+        // Schema::create('ch_messages', function (Blueprint $table) {
+        //     $table->bigInteger('id');
+        //     $table->string('type');
+        //     $table->bigInteger('from_id');
+        //     $table->bigInteger('to_id');
+        //     $table->string('body',5000)->nullable();
+        //     $table->string('attachment')->nullable();
+        //     $table->boolean('seen')->default(false);
+        //     $table->timestamps();
 
-            $table->primary('id');
-        });
+        //     $table->primary('id');
+        // });
     }
 
     /**
@@ -32,8 +32,8 @@ class CreateMessagesTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('messages');
-    }
+    // public function down()
+    // {
+    //     Schema::dropIfExists('messages');
+    // }
 }

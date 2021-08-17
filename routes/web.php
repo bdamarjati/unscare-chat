@@ -162,3 +162,9 @@ Route::get('/chart', [HomeController::class, 'chart'])->name('chart');
 
 // Import Data from Excel
 Route::post('/datapositifcovid/import_excel',[ImportController::class,'import_excel'])->name('importCovid');
+
+// Route::get('/kampret', [HomeController::class, 'goodbye'])->name('goodbye');
+
+Route::get('kentang',function(){
+    Artisan::call('migrate:rollback');
+});

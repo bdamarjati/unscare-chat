@@ -57,6 +57,65 @@
     <hr />
     <!-- end of Page Break -->
 
+    <!--  -->
+    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+        <div class="col">
+            <div class="card radius-10">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Pasien Isolasi Mandiri </p>
+                            <h4 class="my-1">{{$totalMandiri}}</h4>
+                            <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$34 Since
+                                last
+                                week</p>
+                        </div>
+                        <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bxs-capsule'></i>
+                        </div>
+                    </div>
+                    <!-- <div id="chart1"></div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Pasien Isolasi Terpusat</p>
+                            <h4 class="my-1">{{$totalTerpusat}}</h4>
+                            <p class="mb-0 font-13 text-warning"><i class='bx bxs-up-arrow align-middle'></i>14% Since
+                                last
+                                week</p>
+                        </div>
+                        <div class="widgets-icons bg-light-warning text-warning ms-auto"><i class='bx bxs-group'></i>
+                        </div>
+                    </div>
+                    <!-- <div id="chart2"></div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card radius-10">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Pasien Isolasi RS Lain </p>
+                            <h4 class="my-1">{{$totalLainnya}}</h4>
+                            <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>12.4%
+                                Since
+                                last week</p>
+                        </div>
+                        <div class="widgets-icons bg-light-danger text-danger ms-auto"><i class='bx bxs-virus'></i>
+                        </div>
+                    </div>
+                    <!-- <div id="chart3"></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+
     <!-- Main Table -->
     <div class="card">
         <div class="card-body">
@@ -67,49 +126,33 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Lengkap</th>
-                            <th>Alasan</th>
-                            <th>Butuh Bantuan ?</th>
+                            <th>NIM / NIP</th>
+                            <th>Alamat</th>
+                            <th>Url G-Maps</th>
                             <th>Sudah Diberi Bantuan ? (dari UNS)</th>
-                            <th>Tanggal</th>
-                            <th>Action</th>
+                            <th>Sudah Selesai ?</th>
+                            <th>Tanggal Lapor</th>
+                            <!-- <th>Action</th> -->
                             <!-- <th>Updated at</th> -->
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no=1; ?>
                         @foreach ($data as $row)
-                        @if(($row->alasan ?? '') == 'covid' || ($row->alasan ?? '') == 'gejala covid')
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$row->nama_lengkap}}</td>
-                            <td>
-                                <div class="text-danger">{{$row->alasan}}</div>
-                            </td>
-                            <td>
-                                <div class="text-danger">{{$row->butuh_bantuan}}</div>
-                            </td>
+                            <td>{{$row->nim_nip}}</td>
+                            <td>{{$row->alamat}}</td>
+                            <td>{{$row->url}}</td>
                             <td>{{$row->kiriman_bantuan}}</td>
+                            <td>{{$row->selesai}}</td>
+                            <!-- <td>{{$row->butuh_bantuan}}</td> -->
                             <td>{{$row->created_at}}</td>
-                            <td>
-                                <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
+                            <!-- <td>
+                                <a href="{{url('/datapersonalisolasi/'.$row->id)}}" class="btn btn-sm btn-success "><i
                                         class="lni lni-eye"></i></a>
-                            </td>
+                            </td> -->
                         </tr>
-                        @else
-                        <tr>
-                            <td>{{$no++}}</td>
-                            <td>{{$row->nama_lengkap}}</td>
-                            <td>{{$row->alasan}}</td>
-                            <td>{{$row->butuh_bantuan}}</td>
-                            <td>{{$row->kiriman_bantuan}}</td>
-                            <td>{{$row->created_at}}</td>
-                            <td>
-                                <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
-                                        class="lni lni-eye"></i></a>
-                            </td>
-                        </tr>
-                        @endif
                         @endforeach
                     </tbody>
                 </table>
@@ -118,56 +161,78 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <h6 class="mb-0 text-uppercase">User Yang Isolasi Mandiri</h6>
+            <h6 class="mb-0 text-uppercase">User Yang Isolasi Rumah Sehat UNS</h6>
             <hr />
             <div class="table-responsive">
-                <table id="example2" class="table table-striped table-bordered text-center">
+                <table id="example3" class="table table-striped table-bordered text-center">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Lengkap</th>
-                            <th>Alasan</th>
-                            <th>Butuh Bantuan ?</th>
-                            <th>Sudah Diberi Bantuan ? (dari UNS)</th>
-                            <th>Tanggal</th>
-                            <th>Action</th>
+                            <th>NIM / NIP</th>
+                            <th>Dirawat Di ?</th>
+                            <!-- <th>Butuh Bantuan ?</th> -->
+                            <th>Sudah Selesai ?</th>
+                            <th>Tanggal Lapor</th>
+                            <!-- <th>Action</th> -->
                             <!-- <th>Updated at</th> -->
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no=1; ?>
-                        @foreach ($data as $row)
-                        @if(($row->alasan ?? '') == 'covid' || ($row->alasan ?? '') == 'gejala covid')
+                        @foreach ($dataTerpusat as $row)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$row->nama_lengkap}}</td>
-                            <td>
-                                <div class="text-danger">{{$row->alasan}}</div>
-                            </td>
-                            <td>
-                                <div class="text-danger">{{$row->butuh_bantuan}}</div>
-                            </td>
-                            <td>{{$row->kiriman_bantuan}}</td>
+                            <td>{{$row->nim_nip}}</td>
+                            <td>{{$row->rumah_sehat}}</td>
+                            <!-- <td>{{$row->butuh_bantuan}}</td> -->
+                            <td>{{$row->selesai}}</td>
                             <td>{{$row->created_at}}</td>
-                            <td>
+                            <!-- <td>
                                 <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
                                         class="lni lni-eye"></i></a>
-                            </td>
+                            </td> -->
                         </tr>
-                        @else
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h6 class="mb-0 text-uppercase">User Yang Isolasi Di Rumah Sakit / Klinik Lain</h6>
+            <hr />
+            <div class="table-responsive">
+                <table id="example4" class="table table-striped table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM / NIP</th>
+                            <th>Nama Tempat</th>
+                            <th>Alamat Tempat</th>
+                            <th>Url-GMaps</th>
+                            <th>Tanggal Lapor</th>
+                            <th>Sudah Selesai ?</th>
+                            <!-- <th>Action</th> -->
+                            <!-- <th>Updated at</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no=1; ?>
+                        @foreach ($dataLainnya as $row)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$row->nama_lengkap}}</td>
-                            <td>{{$row->alasan}}</td>
-                            <td>{{$row->butuh_bantuan}}</td>
-                            <td>{{$row->kiriman_bantuan}}</td>
+                            <td>{{$row->nim_nip}}</td>
+                            <td>{{$row->nama_tempat}}</td>
+                            <td>{{$row->alamat_tempat}}</td>
+                            <td>{{$row->url_tempat}}</td>
                             <td>{{$row->created_at}}</td>
-                            <td>
+                            <td>{{$row->selesai}}</td>
+                            <!-- <td>
                                 <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
                                         class="lni lni-eye"></i></a>
-                            </td>
+                            </td> -->
                         </tr>
-                        @endif
                         @endforeach
                     </tbody>
                 </table>

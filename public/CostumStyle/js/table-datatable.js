@@ -26,6 +26,7 @@ $(function () {
     $(document).ready(function () {
         $('#example').DataTable();
     });
+   
 
     $(document).ready(function () {
         // Create date inputs
@@ -49,5 +50,76 @@ $(function () {
         table.buttons().container()
             .appendTo('#example2_wrapper .col-md-6:eq(0)');
     });
+
+    $(document).ready(function () {
+        // Create date inputs
+        minDate = new DateTime($('#min'), {
+            format: 'MMMM Do YYYY hh:mm:ss'
+        });
+        maxDate = new DateTime($('#max'), {
+            format: 'MMMM Do YYYY hh:mm:ss'
+        });
+        // DataTables initialisation
+        var table = $('#example3').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'print', 'pageLength'],
+        });
+        // Refilter the table
+        $('#min, #max').on('change', function () {
+            table.draw();
+
+        });
+
+        table.buttons().container()
+            .appendTo('#example3_wrapper .col-md-6:eq(0)');
+    });
+
+    $(document).ready(function () {
+        // Create date inputs
+        minDate = new DateTime($('#min'), {
+            format: 'MMMM Do YYYY hh:mm:ss'
+        });
+        maxDate = new DateTime($('#max'), {
+            format: 'MMMM Do YYYY hh:mm:ss'
+        });
+        // DataTables initialisation
+        var table = $('#example4').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'print', 'pageLength'],
+        });
+        // Refilter the table
+        $('#min, #max').on('change', function () {
+            table.draw();
+
+        });
+
+        table.buttons().container()
+            .appendTo('#example4_wrapper .col-md-6:eq(0)');
+    });
+
+    $(document).ready(function () {
+        // Create date inputs
+        minDate = new DateTime($('#min'), {
+            format: 'MMMM Do YYYY hh:mm:ss'
+        });
+        maxDate = new DateTime($('#max'), {
+            format: 'MMMM Do YYYY hh:mm:ss'
+        });
+        // DataTables initialisation
+        var table = $('#cilik').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'print'],
+        });
+        // Refilter the table
+        $('#min, #max').on('change', function () {
+            table.draw();
+
+        });
+
+        table.buttons().container()
+            .appendTo('#cilik_wrapper .col-md-6:eq(0)');
+    });
+
+   
 
 });

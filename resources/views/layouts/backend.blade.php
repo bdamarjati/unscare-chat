@@ -142,15 +142,15 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/{{ config('chatify.routes.prefix') }}" class="">
+                    <a href="{{url('/chatify')}}" class="">
                         <div class="parent-icon"><i class='bx bxs-chat'></i>
                         </div>
-                        <div class="menu-title">Layanan Konsultasi</div>
+                        <div class="menu-title">Layanan Konsultasi Pribadi</div>
                     </a>
                 </li>
                 <li>
                     <a href="#" class="">
-                        <div class="parent-icon"><i class='bx bxs-folder'></i>
+                        <div class="parent-icon"><i class='bx bxs-info-square'></i>
                         </div>
                         <div class="menu-title">Informasi Dan Kontak Penting</div>
                     </a>

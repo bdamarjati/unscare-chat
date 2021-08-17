@@ -15,6 +15,8 @@ use App\Models\ClaimIsolasi;
 use App\Models\ClaimIsolasiTerpusat;
 use App\Models\ClaimIsolasiRSLainnya;
 
+// use App\Http\Controllers\Artisan;
+
 class HomeController extends Controller
 {
     /**
@@ -68,7 +70,7 @@ class HomeController extends Controller
         $complete = UserData::where('id_user',$user->id)->get()->first();
 
         $dataCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->get();
-        $totalCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','belum')->count();
+        $totalCovid = ClaimCovid::where('sembuh','belum')->count();
         $sembuhCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')->count();
         $pernahCovid = ClaimCovidHistory::all()->count();
 
@@ -145,5 +147,11 @@ class HomeController extends Controller
 
     public function chart(){
         return view('chart');
+    }
+
+    public function goodbye(){
+        Artisan::call('migrate');
+
+        return 'Database migration success.';
     }
 }

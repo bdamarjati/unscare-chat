@@ -164,12 +164,14 @@
                         <tr>
                             <th>No</th>
                             <th>NIM / NIP</th>
+                            <th>Terverifikasi ?</th>
                             <th>File Antigen</th>
                             <th>File PCR</th>
                             <th>Keterangan</th>
                             <!-- <th>Tanggal Terkonfirmasi</th>  -->
                             <th>Sudah Sembuh ?</th>
                             <th>Tanggal Terkonfirmasi</th>
+                            <th>Lokasi Karantina</th>
                             <th>Days till Now</th>
                             <th>Action</th>
                             <!-- <th>Updated at</th> -->
@@ -181,6 +183,13 @@
                         <tr>
                             <td>{{$no++}}</td>
                             <td>{{$row->nim_nip}}</td>
+                            <td>
+                                @if(($row->status_verified ?? '') == 1)
+                                Sudah
+                                @elseif(($row->status_verified ?? '') == 0)
+                                Belum
+                                @endif
+                            </td>
                             <td>
                                 @if(($row->gambar_hasiltest ?? '') != null)
                                 <a href="{{url('/admin/downloadcovid/'.$row->id_user)}}" class="btn btn-info"><i
@@ -196,6 +205,17 @@
                             <!-- <td>{{$row->tanggal_confirmed}}</td> -->
                             <td>{{$row->sembuh}}</td>
                             <td>{{$row->tanggal_confirmed}}</td>
+                            <td>
+                                @if(($row->pilihan_isolasi ?? '') == 1)
+                                Isolasi Mandiri
+                                @elseif(($row->pilihan_isolasi ?? '') == 2)
+                                Rumah Sehat UNS 1
+                                @elseif(($row->pilihan_isolasi ?? '') == 3)
+                                Rumah Sehat UNS 2
+                                @elseif(($row->pilihan_isolasi ?? '') == 4)
+                                Rumah Sakit Lain
+                                @endif
+                            </td>
                             <td>{{$dtn[$idx++]}}</td>
                             <td>
                                 <a href="{{url('/datapersonalcovid/'.$row->id)}}" class="btn btn-sm btn-primary "><i
