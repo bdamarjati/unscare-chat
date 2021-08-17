@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2021 at 06:46 AM
+-- Generation Time: Aug 17, 2021 at 12:18 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -88,41 +88,8 @@ CREATE TABLE `claim_covid` (
 --
 
 INSERT INTO `claim_covid` (`id`, `id_user`, `nim_nip`, `gambar_hasiltest`, `gambar_pcr`, `keterangan`, `tanggal_confirmed`, `status_verified`, `pilihan_isolasi`, `sembuh`, `created_at`, `updated_at`) VALUES
-(66, NULL, 'k808081', NULL, NULL, 'kampret', '2021-05-02', 1, 1, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(67, NULL, 'k808082', NULL, NULL, 'kampret', '2021-05-03', 1, 2, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(68, NULL, 'k808083', NULL, NULL, 'kampret', '2021-05-04', 1, 2, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(69, NULL, 'k808084', NULL, NULL, 'kampret', '2021-05-04', 1, 2, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(70, NULL, 'k808085', NULL, NULL, 'kampret', '2021-05-04', 1, 2, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(71, NULL, 'k808086', NULL, NULL, 'kampret', '2021-05-04', 1, 3, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(72, NULL, 'k808087', NULL, NULL, 'kampret', '2021-05-04', 1, 4, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(73, NULL, 'k808088', NULL, NULL, 'kampret', '2021-05-04', 1, 2, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(74, NULL, 'k808089', NULL, NULL, 'kampret', '2021-05-04', 1, 1, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(75, NULL, 'k808090', NULL, NULL, 'kampret', '2021-05-11', 1, 3, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(76, NULL, 'k808091', NULL, NULL, 'kampret', '2021-05-12', 1, 2, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(77, NULL, 'k808092', NULL, NULL, 'kampret', '2021-05-13', 1, 4, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(78, NULL, 'k808093', NULL, NULL, 'kampret', '2021-05-13', 1, 1, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(79, NULL, 'k808094', NULL, NULL, 'kampret', '2021-05-13', 1, 2, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(80, NULL, 'k808095', NULL, NULL, 'kampret', '2021-05-16', 1, 3, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(81, NULL, 'k808096', NULL, NULL, 'kampret', '2021-05-17', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(82, NULL, 'k808097', NULL, NULL, 'kampret', '2021-05-18', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(83, NULL, 'k808098', NULL, NULL, 'kampret', '2021-05-19', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(84, NULL, 'k808099', NULL, NULL, 'kampret', '2021-05-20', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(85, NULL, 'k808100', NULL, NULL, 'kampret', '2021-05-20', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(86, NULL, 'k808101', NULL, NULL, 'kampret', '2021-05-20', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(87, NULL, 'k808102', NULL, NULL, 'kampret', '2021-05-20', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(88, NULL, 'k808103', NULL, NULL, 'kampret', '2021-05-20', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(89, NULL, 'k808104', NULL, NULL, 'kampret', '2021-05-21', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(90, NULL, 'k808105', NULL, NULL, 'kampret', '2021-05-22', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(91, NULL, 'k808106', NULL, NULL, 'kampret', '2021-05-23', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(92, NULL, 'k808107', NULL, NULL, 'kampret', '2021-05-24', 1, NULL, 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(93, 11, NULL, 'foto_antigen_K202075.xlsx', NULL, 'hjh', '2021-08-19', 0, NULL, 'sudah', '2021-08-16 08:47:36', '2021-08-16 08:48:29'),
-(94, 11, NULL, 'foto_antigen_K202075.xlsx', NULL, 'asda', '2021-08-10', 0, NULL, 'sudah', '2021-08-16 08:51:17', '2021-08-16 20:03:16'),
-(95, 11, NULL, 'foto_antigen_K202075.xlsx', NULL, 'asdasd', '2021-08-13', 0, 2, 'belum', '2021-08-16 20:18:18', '2021-08-16 20:18:18'),
-(96, 11, NULL, 'foto_antigen_K202075.xlsx', NULL, 'asd', '2021-08-13', 0, 2, 'sudah', '2021-08-16 20:18:46', '2021-08-16 20:56:54'),
-(97, 11, NULL, 'foto_antigen_K202075.xlsx', NULL, 'asdadsads', '2021-08-26', 0, 2, 'sudah', '2021-08-16 20:57:43', '2021-08-16 21:02:15'),
-(98, 11, NULL, 'foto_antigen_K202075.xlsx', NULL, 'sadasd', '2021-08-06', 0, 2, 'sudah', '2021-08-16 21:02:28', '2021-08-16 21:11:32'),
-(99, 11, NULL, 'foto_antigen_K202075.xlsx', NULL, 'asads', '2021-08-19', 0, 2, 'sudah', '2021-08-16 21:19:21', '2021-08-16 21:23:13'),
-(100, 11, '123', 'foto_antigen_123.xlsx', NULL, 'asdasdsa', '2021-08-17', 1, 2, 'sudah', '2021-08-16 21:24:36', '2021-08-16 21:25:30');
+(101, 11, '123', 'foto_antigen_123.png', NULL, 'asdasads', '2021-08-11', 0, 1, 'belum', '2021-08-17 00:46:47', '2021-08-17 00:46:47'),
+(102, 7, 'K202030', NULL, 'foto_pcr_K202030.png', 'aku sakit lagi aw', '2021-08-12', 0, 2, 'belum', '2021-08-17 00:53:05', '2021-08-17 00:53:05');
 
 -- --------------------------------------------------------
 
@@ -138,40 +105,6 @@ CREATE TABLE `claim_covid_history` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `claim_covid_history`
---
-
-INSERT INTO `claim_covid_history` (`id`, `id_user`, `nim_nip`, `sembuh`, `created_at`, `updated_at`) VALUES
-(32, NULL, 'k808081', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(33, NULL, 'k808082', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(34, NULL, 'k808083', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(35, NULL, 'k808084', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(36, NULL, 'k808085', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(37, NULL, 'k808086', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(38, NULL, 'k808087', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(39, NULL, 'k808088', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(40, NULL, 'k808089', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(41, NULL, 'k808090', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(42, NULL, 'k808091', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(43, NULL, 'k808092', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(44, NULL, 'k808093', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(45, NULL, 'k808094', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(46, NULL, 'k808095', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(47, NULL, 'k808096', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(48, NULL, 'k808097', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(49, NULL, 'k808098', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(50, NULL, 'k808099', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(51, NULL, 'k808100', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(52, NULL, 'k808101', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(53, NULL, 'k808102', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(54, NULL, 'k808103', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(55, NULL, 'k808104', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(56, NULL, 'k808105', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(57, NULL, 'k808106', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(58, NULL, 'k808107', 'belum', '2021-08-15 07:45:12', '2021-08-15 07:45:12'),
-(59, NULL, '123', 'sudah', '2021-08-16 21:25:12', '2021-08-16 21:25:30');
 
 -- --------------------------------------------------------
 
@@ -220,6 +153,13 @@ CREATE TABLE `claim_isolasi` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `claim_isolasi`
+--
+
+INSERT INTO `claim_isolasi` (`id`, `id_covid`, `id_user`, `nim_nip`, `alasan`, `alamat`, `url_map`, `keterangan`, `butuh_bantuan`, `kiriman_bantuan`, `selesai`, `status_change`, `created_at`, `updated_at`) VALUES
+(13, 101, NULL, NULL, 'Tidak, Ada teman/orang lain yang tinggal di tempat yang sama', 'adsads', 'adsads', NULL, NULL, 'belum', 'belum', 0, '2021-08-17 00:46:47', '2021-08-17 00:46:47');
+
 -- --------------------------------------------------------
 
 --
@@ -261,9 +201,7 @@ CREATE TABLE `claim_isolasi_terpusat` (
 --
 
 INSERT INTO `claim_isolasi_terpusat` (`id`, `id_covid`, `id_user`, `nim_nip`, `rumah_sehat`, `selesai`, `created_at`, `updated_at`) VALUES
-(20, 98, NULL, NULL, 'RS1', 'sudah', '2021-08-16 21:02:28', '2021-08-16 21:11:32'),
-(21, 99, NULL, NULL, 'RS1', 'sudah', '2021-08-16 21:19:21', '2021-08-16 21:23:13'),
-(22, 100, NULL, NULL, 'RS1', 'sudah', '2021-08-16 21:24:36', '2021-08-16 21:25:30');
+(23, 102, NULL, NULL, 'RS1', 'belum', '2021-08-17 00:53:05', '2021-08-17 00:53:05');
 
 -- --------------------------------------------------------
 
@@ -283,6 +221,13 @@ CREATE TABLE `claim_vaksin` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `claim_vaksin`
+--
+
+INSERT INTO `claim_vaksin` (`id`, `id_user`, `nim_nip`, `dosis_ke`, `link`, `keterangan`, `status_verified`, `created_at`, `updated_at`) VALUES
+(24, 11, NULL, 1, 'www.google.com', 'Kampus', 0, '2021-08-17 01:12:09', '2021-08-17 01:12:09');
+
 -- --------------------------------------------------------
 
 --
@@ -297,6 +242,13 @@ CREATE TABLE `claim_vaksin_history` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `claim_vaksin_history`
+--
+
+INSERT INTO `claim_vaksin_history` (`id`, `id_user`, `nim_nip`, `dosis`, `created_at`, `updated_at`) VALUES
+(6, 11, NULL, 1, '2021-08-17 01:12:09', '2021-08-17 01:12:09');
 
 -- --------------------------------------------------------
 
@@ -374,7 +326,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `role`, `passwo
 (12, 'polka', 'polka@gmail.com', NULL, 'user', '$2y$10$Yc9FQJ9mZ20i6a58cuR2puUTruQjd0QCC/K4lkl74gXtIxMkAU1/6', NULL, '2021-08-11 08:58:41', '2021-08-11 08:58:41', 'avatar.png', '#2180f3', 0, 0),
 (13, 'elsa', 'dokterelsa@gmail.com', NULL, 'user', '$2y$10$Vak2S9SqVCp8rAsuAPJJ9uvYTWWEgWfmy.ivvahNWoFKpxHyD0pJ2', NULL, '2021-08-11 17:37:00', '2021-08-11 17:37:00', 'avatar.png', '#2180f3', 0, 0),
 (14, 'operator', 'operator@gmail.com', NULL, 'operator', '$2y$10$dOdAcz67Pl//lV93AiepBe.Y1E6.bhC9.voFLpo/Vhxq4p.DOFira', NULL, '2021-08-14 22:09:03', '2021-08-14 22:09:03', 'avatar.png', '#2180f3', 0, 0),
-(15, 'viana', 'viana@gmail.com', NULL, 'user', '$2y$10$qF9rwI02yXshaqmBhXWGI.cCFQrk59iMKWapZBUfNV8CMtYl/t8A2', NULL, '2021-08-15 02:50:23', '2021-08-15 02:50:23', 'avatar.png', '#2180f3', 0, 0);
+(15, 'viana', 'viana@gmail.com', NULL, 'user', '$2y$10$qF9rwI02yXshaqmBhXWGI.cCFQrk59iMKWapZBUfNV8CMtYl/t8A2', NULL, '2021-08-15 02:50:23', '2021-08-15 02:50:23', 'avatar.png', '#2180f3', 0, 0),
+(16, 'kentang goreng', 'kentang@gmail.com', NULL, 'user', '$2y$10$8YCr3sZ9kjgDfIubSVt1j.Z4LOBsVla04YDZrxBiHnL1YBWpe8ulu', NULL, '2021-08-17 03:06:04', '2021-08-17 03:06:04', 'avatar.png', '#2180f3', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -384,11 +337,11 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `role`, `passwo
 
 CREATE TABLE `user_data` (
   `id` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `nama_lengkap` varchar(255) NOT NULL,
-  `nim_nip` varchar(255) NOT NULL,
-  `no_telp` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `nama_lengkap` varchar(255) DEFAULT NULL,
+  `nim_nip` varchar(255) DEFAULT NULL,
+  `no_telp` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
   `gambar_ktp` varchar(255) DEFAULT NULL,
   `verified` varchar(255) DEFAULT NULL,
@@ -412,7 +365,8 @@ INSERT INTO `user_data` (`id`, `id_user`, `nama_lengkap`, `nim_nip`, `no_telp`, 
 (20, 12, 'polka dimika', 'K202095', '081353283927', 'biasa', 'Jl. Sutawijaya', 'foto_ktp_K202095.png', 'no', '2021-08-11 08:59:25', '2021-08-11 08:59:25'),
 (21, 13, 'elsa varadisa', 'K202085', '081353283123', 'dokter', 'Jl. Kapuk', 'foto_ktp_K202085.png', 'no', '2021-08-11 17:37:42', '2021-08-11 17:37:42'),
 (22, 14, 'operator kampus', 'k808029', '081353283333', 'biasa', 'Jl. Suteja', 'foto_ktp_k808029.xlsx', 'no', '2021-08-14 22:09:31', '2021-08-14 22:09:31'),
-(23, 15, 'viana', 'k808023', '081353283934', 'tenaga medis', 'Jl. Yongki', 'foto_ktp_k808023.sql', 'yes', '2021-08-15 02:51:05', '2021-08-15 02:51:42');
+(23, 15, 'viana', 'k808023', '081353283934', 'tenaga medis', 'Jl. Yongki', 'foto_ktp_k808023.sql', 'yes', '2021-08-15 02:51:05', '2021-08-15 02:51:42'),
+(24, 16, 'kentang goreng', 'k202039', '081353283000', 'umum', 'Jl. nguyuk', NULL, 'no', '2021-08-17 03:06:28', '2021-08-17 03:06:28');
 
 --
 -- Indexes for dumped tables
@@ -520,7 +474,7 @@ ALTER TABLE `user_data`
 -- AUTO_INCREMENT for table `claim_covid`
 --
 ALTER TABLE `claim_covid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `claim_covid_history`
@@ -538,7 +492,7 @@ ALTER TABLE `claim_gejala`
 -- AUTO_INCREMENT for table `claim_isolasi`
 --
 ALTER TABLE `claim_isolasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `claim_isolasi_rslainnya`
@@ -550,19 +504,19 @@ ALTER TABLE `claim_isolasi_rslainnya`
 -- AUTO_INCREMENT for table `claim_isolasi_terpusat`
 --
 ALTER TABLE `claim_isolasi_terpusat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `claim_vaksin`
 --
 ALTER TABLE `claim_vaksin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `claim_vaksin_history`
 --
 ALTER TABLE `claim_vaksin_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -580,13 +534,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
