@@ -157,14 +157,13 @@ Route::get('/deletecovid/{id}', [DataPersonalController::class, 'deleteCovid'])-
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/datacovidoverall', [HomeController::class, 'dataoverall'])->name('dataoverall');
 
-// Emergency / Experiment Routes
+// -> Emergency / Experiment Routes
 Route::get('/chart', [HomeController::class, 'chart'])->name('chart');
 
-// Import Data from Excel
+// -> Import Data from Excel
 Route::post('/datapositifcovid/import_excel',[ImportController::class,'import_excel'])->name('importCovid');
 
-// Route::get('/kampret', [HomeController::class, 'goodbye'])->name('goodbye');
-
-Route::get('kentang',function(){
+// -> Fallback System
+Route::get('fallback',function(){
     Artisan::call('migrate:rollback');
 });

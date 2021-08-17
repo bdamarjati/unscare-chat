@@ -174,8 +174,12 @@
                         <ul class="list-group list-group-flush">
                         </ul>
                         <div class="d-flex flex-column align-items-center text-center">
+                            @if($complete->gambar_ktp ?? '' != null)
                             <img src="{{asset('folder_ktp/'.$complete->gambar_ktp)}}" alt=""
                                 style="width:350px;height:300px;">
+                            @else
+                            <button class="btn btn-outline-secondary">Anda Belum Upload Gambar KTP</button>
+                            @endif
                         </div>
                     </div>
                 </div>

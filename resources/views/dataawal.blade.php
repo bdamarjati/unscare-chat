@@ -48,8 +48,8 @@
 										<textarea type="form-control" class="form-control" placeholder="" name="alamat" id="alamat" required></textarea>
 									</div>
                                     <div class="mb-3">
-										<label class="form-label">Foto KTP :</label>
-										<input type="file" class="form-control" id="file_ktp" name="file_ktp" data-toggle="custom-file-input" required multiple>
+										<label class="form-label">Foto KTP : (optional)</label>
+										<input type="file" class="form-control" id="file_ktp" name="file_ktp" data-toggle="custom-file-input" multiple>
 									</div>
                                     <br>
                                     <div class="mb-3">

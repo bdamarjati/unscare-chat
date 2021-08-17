@@ -51,22 +51,63 @@
         <div class="btn btn-warning "> Belum Vaksin Covid ! </div>
         @endif
 
-        &nbsp;&nbsp;    
+        &nbsp;&nbsp;
 
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary">Settings</button>
+                <button type="button" class="btn btn-outline-primary btn-lg active">
+                @if((Auth::user()->role ?? '') == 'admin'
+                || (Auth::user()->role ?? '') == 'operator')    
+                <span
+                        class="alert-count">{{$total_notification}}</span>
+                        @endif
+                    <i class='bx bxs-bell '></i> Notifications</button>
                 <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split"
                     data-bs-toggle="dropdown">
                     <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
-                    <a class="dropdown-item" href="javascript:;">Action</a>
-                    <a class="dropdown-item" href="javascript:;">Another action</a>
-                    <a class="dropdown-item" href="javascript:;">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="javascript:;">Separated link</a>
+                @if((Auth::user()->role ?? '') == 'admin'
+                || (Auth::user()->role ?? '') == 'operator')
+                <div class="nav-item dropdown dropdown-large dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="javascript:;">
+                        <div class="d-flex align-items-center">
+                            <div class="notify bg-light-primary text-primary"><i class="bx bxs-virus"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="msg-name">{{$notification_isoman}} user melaporkan covid
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="msg-time float-end"></span></h6>
+                                <p class="msg-info">Butuh Konfirmasi Segera !</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item" href="javascript:;">
+                        <div class="d-flex align-items-center">
+                            <div class="notify bg-light-danger text-danger"><i class="bx bxs-capsule"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="msg-name">{{$notification_vaksin}} user melaporkan vaksin
+                                    <span class="msg-time float-end"></span></h6>
+                                <p class="msg-info">Butuh Konfirmasi Segera !</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <a href="javascript:;">
+                        <div class="text-center msg-footer">View All Notifications</div>
+                    </a>
+                    <!-- <a class="dropdown-item" href="javascript:;">Separated link</a> -->
                 </div>
+                @else
+                <div class="nav-item dropdown dropdown-large dropdown-menu dropdown-menu-end">
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <a href="javascript:;">
+                        <div class="text-center msg-footer">Anda tidak memiliki notifikasi apapun</div>
+                    </a>
+                    <!-- <a class="dropdown-item" href="javascript:;">Separated link</a> -->
+                </div>
+                @endif
             </div>
         </div>
         <!--end breadcrumb-->
@@ -186,5 +227,7 @@
             </div>
         </a>
     </div>
-    <!-- end Shortcut -->
-    @endsection
+</div>
+<!-- end Shortcut -->
+
+@endsection

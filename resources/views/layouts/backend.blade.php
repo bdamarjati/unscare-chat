@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--favicon-->
-    <link rel="icon" href="{{asset('CostumStyle/images/like.png')}}" type="image/png" />
+    <link rel="icon" href="{{asset('CostumStyle/images/medicine_a.png')}}" type="image/png" />
     <!--plugins-->
     <link href="{{asset('CostumStyle/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
     <link href="{{asset('CostumStyle/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
@@ -44,7 +44,7 @@
             <div class="sidebar-header">
                 <div>
                     <!-- <i class='lni lni-heart logo-icon'></i> -->
-                    <img src="{{asset('CostumStyle/images/hearts.png')}}" class="logo-icon" alt="logo icon">
+                    <img src="{{asset('CostumStyle/images/medicine.png')}}" class="logo-icon" alt="logo icon">
                 </div>
                 <div>
                     <br>
@@ -74,7 +74,23 @@
                     </a>
                 </li>
 
-                @if((Auth::user()->role ?? '') == 'user')
+                @if((Auth::user()->role ?? '') == 'admin')
+                <li>
+                    <a href="javascript:;" class="">
+                        <div class="parent-icon"><i class='bx bx-notepad'></i>
+                        </div>
+                        <div class="menu-title">Data User Administration</div>
+                    </a>
+                    <ul>
+                        <li> <a href="{{url('/admin/useradministration')}}"><i class="bx bx-right-arrow-alt"></i>List
+                                User</a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+
+                @if((Auth::user()->role ?? '') == 'user' || (Auth::user()->role ?? '') == 'admin'
+                || (Auth::user()->role ?? '') == 'operator')
                 <li>
                     <a href="javascript:;" class="">
                         <div class="parent-icon"><i class='bx bxs-virus'></i>
@@ -96,22 +112,7 @@
                     </ul>
                 </li>
                 @endif
-
-                @if((Auth::user()->role ?? '') == 'admin')
-                <li>
-                    <a href="javascript:;" class="">
-                        <div class="parent-icon"><i class='bx bx-notepad'></i>
-                        </div>
-                        <div class="menu-title">Data User Administration</div>
-                    </a>
-                    <ul>
-                        <li> <a href="{{url('/admin/useradministration')}}"><i class="bx bx-right-arrow-alt"></i>List
-                                User</a>
-                        </li>
-                    </ul>
-                </li>
-                @endif
-
+                
                 <li>
                     <a href="javascript:;" class="">
                         <div class="parent-icon"><i class='bx bx-list-ul'></i>
@@ -126,7 +127,7 @@
                         (Auth::user()->role ?? '') == 'admin'||(Auth::user()->role ?? '') == 'operator' ||
                         ($complete->status ?? '') == 'koas dokter' && ($complete->verified ?? '') == 'yes' ||
                         ($complete->status ?? '') == 'tenaga medis' && ($complete->verified ?? '') == 'yes')
-                        <li> <a href="{{url('/admin/datapositifcovid')}}"><i class="bx bx-right-arrow-alt"></i>Data User
+                        <li> <a href="{{url('/admin/datapositifcovid')}}"><i class="bx bx-right-arrow-alt"></i>Data
                                 Positif Covid</a>
                         </li>
 

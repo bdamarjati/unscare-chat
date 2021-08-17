@@ -79,13 +79,17 @@ class UserDataController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $ktp = $request->file('file_ktp');
         
-        $nama_ktp = "foto_ktp_".$request->nim_nip.".".$ktp->getClientOriginalExtension();
+        if($ktp == null){
+            $nama_ktp = null;
+        }else{
+            $nama_ktp = "foto_ktp_".$request->nim_nip.".".$ktp->getClientOriginalExtension();
+            $ktp_upload = 'folder_ktp';
+            $ktp->move($ktp_upload,$nama_ktp);
+        }
 
-        $ktp_upload = 'folder_ktp';
-        $ktp->move($ktp_upload,$nama_ktp);
-        
         UserData::updateOrCreate(
             ['id_user' => $id],
             ['nama_lengkap' => $request->nama_lengkap, 

@@ -43,8 +43,9 @@ class ClaimController extends Controller
         // $history = ClaimCovid::Mhsaktif($user->id);
 
         // return $history;
+        $notification_isoman = ClaimCovid::where('status_verified',0)->count();
 
-        return view('claim',compact('user','complete','data','vaksin','history'));
+        return view('claim',compact('user','complete','data','vaksin','history','notification_isoman'));
     }
 
     /**

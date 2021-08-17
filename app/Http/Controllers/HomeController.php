@@ -48,7 +48,12 @@ class HomeController extends Controller
         $complete = UserData::where('id_user',$user->id)->get()->first();
         $data = ClaimCovid::where('id_user',$user->id)->get()->last();
 
-        return view('home', compact('complete','user','data'));
+        $notification_isoman = ClaimCovid::where('status_verified',0)->count();
+        $notification_vaksin = ClaimVaksin::where('status_verified',0)->count();
+        // return $notification_vaksin;
+        $total_notification = $notification_isoman + $notification_vaksin;
+
+        return view('home', compact('complete','user','data','notification_isoman','total_notification','notification_vaksin'));
     }
     public function profile()
     {
@@ -74,9 +79,15 @@ class HomeController extends Controller
         $sembuhCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')->count();
         $pernahCovid = ClaimCovidHistory::all()->count();
 
+        $totalMandiri = ClaimIsolasi::where('selesai','belum')->count();
+        $totalTerpusat = ClaimIsolasiTerpusat::where('selesai','belum')->count();
+        $totalLainnya = ClaimIsolasiRSLainnya::where('selesai','belum')->count();
+
         $dataVaksin = UserData::join('claim_vaksin','claim_vaksin.id_user','=','user_data.id_user')->get();
 
-        return view('statistikoverall', compact('complete','user','dataCovid','totalCovid','sembuhCovid','pernahCovid'));
+        return view('statistikoverall', compact(
+            'totalMandiri','totalTerpusat','totalLainnya',
+            'complete','user','dataCovid','totalCovid','sembuhCovid','pernahCovid'));
     }
 
     /**
