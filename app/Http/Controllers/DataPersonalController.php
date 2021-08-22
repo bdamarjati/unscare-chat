@@ -11,6 +11,7 @@ use App\Models\ClaimCovidHistory;
 use App\Models\ClaimVaksin;
 use App\Models\ClaimGejala;
 use App\Models\ClaimIsolasi;
+use App\Models\LokasiCovid;
 
 class DataPersonalController extends Controller
 {
@@ -78,18 +79,22 @@ class DataPersonalController extends Controller
     {
         $user = Auth::user();
         $check = ClaimCovid::where('id',$id)->get()->first();
+        $check_status = $check->status_verified;
+
+        // return $check_status;
+
         $nim_nip = $check->nim_nip;
-        // return $check;
-        // return $nim_nip;
 
         $complete = UserData::where('id_user',$user->id)->get()->first();
-        // $specific = UserData::join('claim_covid','claim_covid.nim_nip','=','user_data.nim_nip')
-        // ->where('claim_covid.nim_nip',$nim_nip)->get()->first();
-        $specific = UserData::where('nim_nip',$nim_nip)->get()->first();
+        
+        $data = UserData::where('nim_nip',$nim_nip)->get()->first();
+
+        $specific = ClaimCovid::where('id',$id)->get()->first();
 
         // return $specific;
-        
-        return view('datapersonalcovid',compact('complete','specific','user','check'));
+        $lokasi = LokasiCovid::all();
+
+        return view('datapersonalcovid',compact('check_status','data','lokasi','complete','specific','user','check'));
     }
 
     public function showVaksin($id)
@@ -123,22 +128,19 @@ class DataPersonalController extends Controller
 
     public function verifikasiCovid($id)
     {
-        // return $id;
         $user = Auth::user();
         $complete = UserData::where('id_user',$user->id)->get()->first();
-        // $specific = UserData::join('claim_isolasi','claim_isolasi.id_user','=','user_data.id_user')->where('claim_isolasi.id',$id)->get()->first();
         $specific = ClaimCovid::where('id',$id)->get()->first();
         $check = ClaimCovid::where('id',$id)->get()->pluck('nim_nip');
-        // return $check;
-        // $nim_nip = $check->nim_nip;
+
         $duplicate = ClaimCovid::where('nim_nip',$check)->count();
-        // return $duplicate;
-        // return $nim_nip;
+
         ClaimCovid::where('id',$id)->update(
                 [
                         'status_verified'=>1,
                     ]
                 );
+
         if($duplicate == 1){
             ClaimCovidHistory::updateOrCreate( 
                 ['nim_nip'         => $specific->nim_nip],

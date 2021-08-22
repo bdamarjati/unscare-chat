@@ -23,7 +23,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item active" aria-current="page">
-                        <div class="btn btn-light ">Status saat ini </div>
+                        <div class="btn btn-outline-dark">Status saat ini </div>
                     </li>
                 </ol>
             </nav>
@@ -87,7 +87,7 @@
             <div class="col-xl-8 d-flex">
                 <div class="card radius-10 w-100">
                     <div class="card-body">
-                        <form method="post" action="/userdata/{{$user->id}}" enctype="multipart/form-data">
+                        <form method="post" action="userdata/{{$user->id}}" enctype="multipart/form-data">
                             @method('PATCH')
                             @csrf
                             <div class="row mb-3">

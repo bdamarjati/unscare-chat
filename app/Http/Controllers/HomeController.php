@@ -76,7 +76,8 @@ class HomeController extends Controller
 
         $dataCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->get();
         $totalCovid = ClaimCovid::where('sembuh','belum')->count();
-        $sembuhCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')->count();
+        $sembuhCovid = UserData::join('claim_covid','claim_covid.id_user','=','user_data.id_user')->where('claim_covid.sembuh','sudah')
+        ->where('claim_covid.status_verified',1)->count();
         $pernahCovid = ClaimCovidHistory::all()->count();
 
         $totalMandiri = ClaimIsolasi::where('selesai','belum')->count();
@@ -88,6 +89,11 @@ class HomeController extends Controller
         return view('statistikoverall', compact(
             'totalMandiri','totalTerpusat','totalLainnya',
             'complete','user','dataCovid','totalCovid','sembuhCovid','pernahCovid'));
+    }
+
+    public function dataloop(){
+        $y = ClaimIsolasiTerpusat::all();
+        return $y;
     }
 
     /**

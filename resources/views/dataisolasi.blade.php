@@ -25,9 +25,9 @@
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-list-ul"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+                    <li class="breadcrumb-item active" aria-current="page">Data Pasien Karantina</li>
                 </ol>
             </nav>
         </div>
@@ -143,7 +143,7 @@
                             <td>{{$no++}}</td>
                             <td>{{$row->nim_nip}}</td>
                             <td>{{$row->alamat}}</td>
-                            <td>{{$row->url}}</td>
+                            <td>{{$row->url_map}}</td>
                             <td>{{$row->kiriman_bantuan}}</td>
                             <td>{{$row->selesai}}</td>
                             <!-- <td>{{$row->butuh_bantuan}}</td> -->

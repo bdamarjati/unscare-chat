@@ -36,16 +36,26 @@ class IsolasiController extends Controller
     {
         $user = Auth::user();
         $complete = UserData::where('id_user',$user->id)->get()->first();
+
         $data = ClaimCovid::where('id_user',$user->id)->get()->last();
+        
         $vaksin = ClaimVaksin::where('id_user',$user->id)->get()->last();
         $gejala = ClaimGejala::where('id_user',$user->id)->get()->last();
-        $isolasi = ClaimIsolasi::where('id_user',$user->id)->get()->last();
-        // $data = ClaimCovid::where('id_user',$user->id)->get()->last();
+        
+        $check = ClaimCovid::where('nim_nip',$complete->nim_nip)
+        ->get()->last();
 
-        $terpusat = ClaimIsolasiTerpusat::where('id_user',$user->id)->get()->last();
-        $lainnya = ClaimIsolasiRSLainnya::where('id_user',$user->id)->get()->last();
+        // return $complete;
 
-        return view('isolasi',compact('user','complete','data','vaksin','gejala','isolasi','terpusat','lainnya'));
+        $status_verifikasi = $check->status_verified;
+         
+
+        $isolasi = ClaimIsolasi::where('nim_nip',$complete->nim_nip)->get()->last();
+
+        $terpusat = ClaimIsolasiTerpusat::where('nim_nip',$complete->nim_nip)->get()->last();
+        $lainnya = ClaimIsolasiRSLainnya::where('nim_nip',$complete->nim_nip)->get()->last();
+
+        return view('isolasi',compact('status_verifikasi','user','complete','data','vaksin','gejala','isolasi','terpusat','lainnya'));
     }
 
     /**

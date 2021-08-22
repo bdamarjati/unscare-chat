@@ -26,7 +26,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item active" aria-current="page">
-                        <div class="btn btn-light ">Status saat ini </div>
+                        <div class="btn btn-outline-dark">Status saat ini </div>
                     </li>
                 </ol>
             </nav>

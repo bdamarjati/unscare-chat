@@ -195,7 +195,7 @@
                     <div class="user-box dropdown">
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bx bxs-user-circle text-dark font-50"></i>
+                            <i class="bx bxs-user-circle text-secondary font-50"></i>
                             <div class="user-info ps-3">
                                 <p class="user-name mb-0">@yield('data')</p>
                                 <p class="designattion mb-0">@yield('status')</p>

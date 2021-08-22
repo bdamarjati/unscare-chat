@@ -24,7 +24,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item active" aria-current="page">
-                        <div class="btn btn-light ">Status saat ini </div>
+                        <div class="btn btn-outline-dark">Status saat ini </div>
                     </li>
                 </ol>
             </nav>
@@ -79,7 +79,7 @@
     </div>
     @endif
 
-    <h6 class="mb-0 text-uppercase">DataTable Example</h6>
+    <!-- <h6 class="mb-0 text-uppercase">claim sudah vaksin</h6> -->
     <hr />
     <!--end breadcrumb-->
 
